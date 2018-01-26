@@ -39,9 +39,38 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    // solution 1
+    // let leftState;
+    // let rightState;
+    // let curState = lifeState[x];
 
-    return 0; // instead of this
+    // if (x < 1) {
+    //   leftState = 0;
+    // }
+    // else leftState = lifeState[x - 1];
+
+    // if (x >= lifeState.length -1) {
+    //   rightState = 0;
+    // }
+    // else rightState = lifeState[x + 1];
+
+    // if (curState === leftState && curState === rightState) {
+    //   return 0;
+    // }
+
+    // else {
+    //   return 1;
+    // }
+
+    // solution 2
+    // let leftState = (x < 1) ? 0 : lifeState[x - 1];
+    // let rightState = (x >= lifeState.length - 1) ? 0 : lifeState[x + 1];
+    // let curState = lifeState[x];
+    
+    // return (curState === leftState && curState === rightState) ? 0 : 1;
+
+    // sooper one liner
+    return (lifeState[x] === ((x < 1) ? 0 : lifeState[x - 1]) && lifeState[x] === ((x >= lifeState.length - 1) ? 0 : lifeState[x + 1])) ? 0 : 1;
   }
 
   /**
