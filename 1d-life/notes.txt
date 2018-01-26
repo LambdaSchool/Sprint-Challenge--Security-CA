@@ -1,0 +1,15 @@
+Rule 126 is one of the elementary cellular automaton rules introduced by Stephen Wolfram
+in 1983 (Wolfram 1983, 2002). It specifies the next color in a cell, depending on its color
+and its immediate neighbors. Its rule outcomes are encoded in the binary representation  126=01111110_2.
+This rule is illustrated above together with the evolution of a single black cell it produces after 15 
+steps (Wolfram 2002, p. 55).
+
+Rule 126 is amphichiral, and its complement is rule 129.
+
+Starting with a single black cell, successive generations n=0, 1, ... are given by interpreting the 
+numbers 1, 7, 27, 127, 387, 1935, 6579, 32767, ... in binary, namely 1, 111, 11011, 1111111, 110000011, ....
+
+**look at middle cell and cell to left and cell to right (3 numbers)...based on rule, determine number 
+in cell below middle cell
+
+    
