@@ -80,3 +80,9 @@ This result is a [Sierpinski
 Triangle](https://en.wikipedia.org/wiki/Sierpinski_triangle), a
 [fractal](https://en.wikipedia.org/wiki/Fractal) that has a habit of
 turning up in surprising places.
+
+---
+
+My final output:
+
+![Result](img/result.png)
