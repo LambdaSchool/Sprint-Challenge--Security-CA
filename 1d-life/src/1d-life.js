@@ -39,9 +39,13 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    return lifeState[x] ^ lifeState[x - 1] || lifeState[x] ^ lifeState[x + 1]
 
-    return 0; // instead of this
+    // Some other neat variations
+    // return lifeState[x] & lifeState[x - 1] || lifeState[x] ^ lifeState[x + 1]
+    // return lifeState[x] ^ !lifeState[x - 1] || !lifeState[x] ^ lifeState[x + 1]
+    // return lifeState[x] ^ lifeState[x - 1] || lifeState[x] & lifeState[x + 1]
+    // return !lifeState[x] & !lifeState[x - 1] || !lifeState[x] & !lifeState[x + 1]
   }
 
   /**
@@ -78,11 +82,12 @@
 
         index = (generation * canvas.width + x) * 4;
 
+        let bin = ~~(Math.random() * 2)
         color = newVal == 0? 0: 0xff;
 
-        imageData.data[index+0] = color;
-        imageData.data[index+1] = color;
-        imageData.data[index+2] = color;
+        imageData.data[index+0] = 0xff;
+        imageData.data[index+1] = bin ? color : 0xff;
+        imageData.data[index+2] = bin ? color : 0xff;
         imageData.data[index+3] = 0xff;
 
       }
