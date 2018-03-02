@@ -1,0 +1,3 @@
+I instituted 2FA for 3 different sites that I use. Additionally, I downloaded the latest Kali distro and experimented with some of the utilities such as dotdotpwn (web site directory recursion exploit finder), metasploit (a powerful suite of tools that attempts to find exploits on target systems), and hydra (a web site password extraction tool).
+
+I've also setup an Ubuntu VM specifically as a sandbox for certain apps such as internet browsers and to contain file downloads that will be scanned and tested before trusted on production systems.

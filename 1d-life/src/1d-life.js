@@ -39,9 +39,14 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    let a = lifeState[x - 1];
+    let b = lifeState[x];
+    let c = lifeState[x + 1];
+    if (a === undefined) a = 0;
+    if (c === undefined) c = 0;
 
-    return 0; // instead of this
+    // F(a, b, c) = (a and !c) or (!b and c) or (!a and b) <-- derived from truth table and Karnaugh map
+    return (a && !c) || (!b && c) || (!a && b);
   }
 
   /**
