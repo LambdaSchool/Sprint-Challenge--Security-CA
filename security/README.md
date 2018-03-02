@@ -49,3 +49,7 @@ At this point I usually do not even have an AVG running, because it slows Unity 
 All of my important files are immediatly backed up to Google Drive (which has 2factor attached to my phone, which has a pretty complex design needed to open it) as I create them, they are also stored on one of my external hard drives, projects are also saved on github or gitlab.
 
 I also use a vpn for just about all of internet activity.
+
+
+-- I realized that I could 2 factor a couple more of my accounts, so I set them up to worth with Google Authenticator.
+
