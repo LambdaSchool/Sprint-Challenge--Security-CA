@@ -39,9 +39,28 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    // counts the zeros and ones
+    let countZero = 0;
+    let countOne = 0;
+    // iterates through neighbors and the x itself
+    for (let neighbors = -1; neighbors <= 1; neighbors++) {
+      // add x to offset to get the exact pixel spot to examine if value is 1 or 0
+      const xPos = x + neighbors;
 
-    return 0; // instead of this
+      // if out of bounds, add it to the zero counter 
+      if (xPos < 0 || xPos > lifeState.length - 1) {
+        countZero++;
+      }
+      // if value of pixel is 0, add to zero counter or else add to one counter
+      lifeState[xPos] === 0 ? countZero++ : countOne++;
+    }
+    // if all three including neighbor pixels share same value (1 or 0) return 0
+    // if not, return 1;
+    if (countOne === 3 || countZero === 3) {
+      return 0;
+    } else {
+      return 1;
+    }
   }
 
   /**
