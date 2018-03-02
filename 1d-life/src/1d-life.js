@@ -39,9 +39,21 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    if (x < 1 || x >= lifeState.length - 1){
+      return 0;} 
+    else {
+      let aliveCount = 0;
+      if (lifeState[x] === 1){
+        aliveCount = aliveCount + 1;
+      }
+      if (lifeState[x -1] === 1){
+        aliveCount = aliveCount + 1;
+      }
+      if(lifeState[x + 1] === 1){
+        aliveCount = aliveCount + 1;
+      }
+    return aliveCount === 1|| aliveCount === 2?  1 : 0;
+    }
   }
 
   /**
