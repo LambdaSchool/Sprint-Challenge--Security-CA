@@ -40,8 +40,11 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    let count = 0;
+    for (i = x-1; i < x+2; i++) {
+      if (lifeState[i] === 1) count++;
+    }
+    return (count === 0 || count === 3) ? 0 : 1;
   }
 
   /**
