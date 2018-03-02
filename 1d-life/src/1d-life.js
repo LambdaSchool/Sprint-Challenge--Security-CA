@@ -39,9 +39,10 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    if ((!lifeState[x - 1] && !lifeState[x] && !lifeState[x + 1]) || (lifeState[x - 1] && lifeState[x] && lifeState[x + 1])) { 
+      return 0; 
+    }
+    return 1;
   }
 
   /**
