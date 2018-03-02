@@ -46,17 +46,20 @@
 	// is >= lifeState.length - 1, lifeState[x+1] is out of range!
 
 	function getNewVal(lifeState, x) {
-		if (lifeState[x] <= 0) {
-			if (lifeState[x - 1] === 0 && lifeState[x + 1] === 0) {
+		if (lifeState[x] === 0) {
+			if (
+				(lifeState[x - 1] === 0 && lifeState[x + 1] === 0) ||
+				(lifeState[x - 1] === -1 && lifeState[x + 1] === 0)
+			) {
 				return 0;
 			}
 		}
-		if (lifeState[x] >= 1) {
+		if (lifeState[x] === 1) {
 			if (lifeState[x - 1] === 1 && lifeState[x + 1] === 1) {
 				return 0;
 			}
 		}
-		return 1; // instead of this
+		return 1;
 	}
 
 	const COLORS = [[0, 0, 0], [0x05, 0xbd, 0xf8]];
@@ -96,8 +99,8 @@
 				color = newVal == 0 ? 0 : 0xffc300;
 
 				imageData.data[index + 0] = color;
-				imageData.data[index + 1] = color;
-				imageData.data[index + 2] = color;
+				imageData.data[index + 1] = color; //0xc3
+				imageData.data[index + 2] = color; //0x00
 				imageData.data[index + 3] = 0xff;
 			}
 
