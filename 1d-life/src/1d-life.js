@@ -39,9 +39,20 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    console.log('newVal')
+    if (x <= 1) {
+      lifeState[x - 1] = 0;
+    }
+    if (x >= lifeState.length - 1) {
+      lifeState[x + 1] = 0;
+    }
+    if ((lifeState[x - 1] + lifeState[x + 1] + lifeState[x]) === 3) {
+      return 0;
+    } else if ((lifeState[x - 1] + lifeState[x + 1] + lifeState[x]) === 0) {
+      return 0;
+    } else {
+      return 1;
+    }
   }
 
   /**
@@ -78,17 +89,17 @@
 
         index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0? 0: 0xff;
+        color = newVal == 0 ? 0 : 0xff;
 
-        imageData.data[index+0] = color;
-        imageData.data[index+1] = color;
-        imageData.data[index+2] = color;
-        imageData.data[index+3] = 0xff;
+        imageData.data[index + 0] = color;
+        imageData.data[index + 1] = color;
+        imageData.data[index + 2] = color;
+        imageData.data[index + 3] = 0xff;
 
       }
 
-      curStateIdx = curStateIdx == 0? 1: 0;
-      backStateIdx = curStateIdx == 0? 1: 0;
+      curStateIdx = curStateIdx == 0 ? 1 : 0;
+      backStateIdx = curStateIdx == 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
@@ -102,9 +113,9 @@
   function onLoad() {
     drawLife();
   }
-  
+
   // Main
 
-	window.addEventListener('load', onLoad);
+  window.addEventListener('load', onLoad);
 
 }());
