@@ -44,7 +44,7 @@
     // 0	1	 1            0	 1	1         .x.
     // 1	0	 1            1  0	1         .xx
     // 1	1	 0            1  1	1         x..
-    return x < 1 || x >= lifeState.length - 1 ? 0 : lifeState[x - 1] ^ lifeState[x] | lifeState[x] ^ lifeState[x + 1] ? 1 : 0;
+    return lifeState[x - 1] ^ lifeState[x] | lifeState[x] ^ lifeState[x + 1] ? 1 : 0;
   }
 
   /**
