@@ -41,3 +41,5 @@ After you do some of the above, write 1-2 paragraphs summarizing what you did
 so it should be safe to talk about it as long as you don't share actual
 passwords/secrets). As a stretch goal, write a blog post about your security
 setup describing what you’ve learned and tips you have for others.
+
+
