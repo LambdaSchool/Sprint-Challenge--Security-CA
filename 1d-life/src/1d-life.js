@@ -39,9 +39,11 @@
 	 */
 	function getNewVal(lifeState, x) {
 		// one-line solution
-		//return lifeState[x] ^ lifeState[x - 1] || lifeState[x] ^ lifeState[x + 1]; // ^ is exclusive OR (XOR)
+		return lifeState[x] ^ lifeState[x - 1] || lifeState[x] ^ lifeState[x + 1]; // ^ is exclusive OR (XOR)
+		//
 		// hard way - this expression, if you look at the if conditionals, can be reduced via boolean algebra to a single XOR statement.
 		// The truth table, if you write it out, shows the XOR pattern almost immediately.
+		//
 		// if (x < 1 || x >= lifeState.length - 1) {
 		// 	return 0;
 		// }
