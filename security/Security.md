@@ -1,0 +1,5 @@
+#**Practical Security**
+
+After having a lesson on security this week, I realized that most of my personal passwords that I used for different accounts were the same. However, for accounts such as emails, banking I have already set up two factor. Moreover, as I learned from this lesson,developers are high value targets which I didn't consider. As a result, I become aware of that my passwords are easy for hacking, and start to implement some of the suggested resources. 
+
+As per the suggestion and lessons that I already take, I started to implement `KeePass` software which can open a KeePass DataBase files and store all my passwords. Thus, it helped me a lot in avoiding same simple passwords for multiple sites and breaking the hassle of having remeber my passwords, especially the one tha I have to change periodically. Furthermore, I will keep to monitor and review my future password implementations.
