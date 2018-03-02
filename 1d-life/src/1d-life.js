@@ -40,8 +40,50 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    // * Life rules:
+    // * 
+    // *   Look at the x-1 (left), x (current). and x+1 (right) pixels
+    // let backStateIdx = this.curStateIdx === 0 ? 1 : 0;
+    // let curState = this.buffer[this.curStateIdx];
+    // let backState = this.buffer[backStateIdx];
+    this.lifeState = lifeState;
+    this.x = x;
+    this.curStateIdx = 0;
+    for (let x = 0; x < this.height; x++) {
+      for (let lifeState = 0; lifeState < this.width; lifeState++) {
+        if (curState[x][lifeState] === 0 || curState[x][lifeState] === 3) {
+          return 0;
+        }
+        return 1;
+      }
+    }
+    this.curStateIdx = this.curStateIdx === 0 ? 1 : 0;
+    
 
-    return 0; // instead of this
+
+    // let left;
+    // let center; 
+    // let right;
+    // let rules = [0, 1, 1, 1, 1, 1, 1, 0];
+    // for (let x = 0; x < rules.length; x++) {
+    //   let left = lifeState[x - 1];
+    //   let center = lifeState[x];
+    //   let right = lifeState[x + 1];
+    // }
+    // let newState = rules(left,center,right);
+    // cell[i] = newState;
+
+    // *   Careful: if x is <= 1 then lifeState[x-1] is out of range! if x
+    // *   is >= lifeState.length - 1, lifeState[x+1] is out of range!
+    // * 
+    // *   (Out of range values are assumed to be 0.)
+    // * 
+    // *   Return the new pixel value at X depending on if the 3 pixels
+    // *   are on or off in a particular pattern.
+
+
+
+    //return 0; // instead of this
   }
 
   /**
