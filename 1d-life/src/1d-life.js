@@ -77,9 +77,9 @@
                 let newVal = getNewVal(curState, x);
                 backState[x] = newVal;
 
-                index = (generation * canvas.width + x) * 4;
+                let index = (generation * canvas.width + x) * 4;
 
-                if (newVal == 0) {
+                if (newVal === 0) {
                     imageData.data[index + 0] = 0x00;
                     imageData.data[index + 1] = 0x00;
                     imageData.data[index + 2] = 0x6a;
@@ -92,8 +92,8 @@
                 }
             }
 
-            curStateIdx = curStateIdx == 0 ? 1 : 0;
-            backStateIdx = curStateIdx == 0 ? 1 : 0;
+            curStateIdx = curStateIdx === 0 ? 1 : 0;
+            backStateIdx = curStateIdx === 0 ? 1 : 0;
             curState = lifeState[curStateIdx];
             backState = lifeState[backStateIdx];
         }
