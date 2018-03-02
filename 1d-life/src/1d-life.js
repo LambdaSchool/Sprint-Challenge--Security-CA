@@ -37,6 +37,7 @@
      *
      * @param {*} x the current x coordinate in question
      */
+
     function getNewVal(lifeState, x) {
         // !!! IMPLEMENT ME
         let left = lifeState[x - 1] ? lifeState[x - 1] : 0;
@@ -78,12 +79,17 @@
 
                 index = (generation * canvas.width + x) * 4;
 
-                color = newVal == 0 ? 0 : 0xff;
-
-                imageData.data[index + 0] = color;
-                imageData.data[index + 1] = color;
-                imageData.data[index + 2] = color;
-                imageData.data[index + 3] = 0xff;
+                if (newVal == 0) {
+                    imageData.data[index + 0] = 0x00;
+                    imageData.data[index + 1] = 0x00;
+                    imageData.data[index + 2] = 0x6a;
+                    imageData.data[index + 3] = 0xff;
+                } else {
+                    imageData.data[index + 0] = 0xcc;
+                    imageData.data[index + 1] = 0x00;
+                    imageData.data[index + 2] = 0x00;
+                    imageData.data[index + 3] = 0xff;
+                }
             }
 
             curStateIdx = curStateIdx == 0 ? 1 : 0;
