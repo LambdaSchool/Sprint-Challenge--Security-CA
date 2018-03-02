@@ -17,3 +17,4 @@ mgit() {
     fi 
 }
 ```
+Gethub repository signing with GPG2 - used it to sign this.   Anybody who steals my Github login wouldn't be able to make any signed posts unless they can also steal my GPG2 secret key.
