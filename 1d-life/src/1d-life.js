@@ -68,10 +68,10 @@
         let backState = lifeState[backStateIdx];
 
         curState[canvas.width >> 1] = 1; // >>1 is an integer div 2
-
         // Go through all our generations
         for (let generation = 0; generation < canvas.height; generation++) {
             // Go through all the pixels
+
             for (let x = 0; x < canvas.width; x++) {
                 // Compute the new value
                 let newVal = getNewVal(curState, x);
