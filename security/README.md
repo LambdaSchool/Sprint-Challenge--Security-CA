@@ -41,3 +41,9 @@ After you do some of the above, write 1-2 paragraphs summarizing what you did
 so it should be safe to talk about it as long as you don't share actual
 passwords/secrets). As a stretch goal, write a blog post about your security
 setup describing what you’ve learned and tips you have for others.
+
+# What I did:
+I keep my private data off the internet and cold storage my private crypto keys. When I communicate I may use a seperate machine configured on tor and encrypted at a base level and only touches the internet through proxies. 
+Some of the links above were new and I took most of my time digging through them. It's always nice to see what the latest security tools are. But it seems to come down to not clicking that link and seperate your must hide data from your everyday browsing working data. 
+
+It does remind me to update some of my mobile behavior to improve confidential movement. 
