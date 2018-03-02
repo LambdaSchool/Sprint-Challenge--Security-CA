@@ -38,10 +38,21 @@
    * 
    * @param {*} x the current x coordinate in question
    */
+  
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+   // console.log(x);
+  let sum = 0;
+  if (x === 0) {
+    sum = lifeState[x] + lifeState[x + 1] ;
+  } else if (x === lifeState.length - 1) {
+   sum = lifeState[x - 1] + lifeState[x] ;
+  } else {
+  sum = lifeState[x - 1] + lifeState[x] + lifeState[x + 1] ;
+ }
+    if (sum === 0 || sum === 3) {
+      return 0;    
+    } else return 1;
   }
 
   /**
