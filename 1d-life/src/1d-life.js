@@ -39,15 +39,23 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-    // console.log(x);
+
     if (
-      (lifeState[x - 1] === 0 &&
-        lifeState[x] === 0 &&
-        lifeState[x + 1] === 0) ||
-      (lifeState[x - 1] === 1 && lifeState[x] === 1 && lifeState[x + 1] === 1)
+      (lifeState[x - 1] === 0 || !lifeState[x - 1]) &&
+      lifeState[x] === 0 &&
+      (lifeState[x + 1] === 0 || !lifeState[x + 1])
     ) {
       return 0;
     }
+
+    if (
+      lifeState[x - 1] === 1 &&
+      lifeState[x] === 1 &&
+      lifeState[x + 1] === 1
+    ) {
+      return 0;
+    }
+
     return 1; // instead of this
   }
 
