@@ -39,11 +39,12 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    if (x <= 1 || x >= lifeState.length-1) return 0;
+    // use use 43,44,46 or 43,45,46
+    // if (x <= 1 || x >= lifeState.length-1) return 0;
     // if ((lifeState[x-1] === 0 && lifeState[x] === 0 && lifeState[x+1] === 0) || (lifeState[x-1] === 1 && lifeState[x] === 1 && lifeState[x+1] === 1)) return 0;
     // if (lifeState[x-1] === lifeState[x] && lifeState[x] === lifeState[x+1]) return 0;
-    return lifeState[x-1] === lifeState[x] && lifeState[x] === lifeState[x+1]? 0 : 1;
     // else return 1;
+    return (x <= 1 || x >= lifeState.length-1) ? 0 : lifeState[x-1] === lifeState[x] && lifeState[x] === lifeState[x+1] ? 0 : 1;
   }
 
   /**
