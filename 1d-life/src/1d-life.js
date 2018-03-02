@@ -39,9 +39,11 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    n = 0
+    for (let i = Math.max(0,x-1);i<Math.min(x+2,lifeState.length) ;i++)
+      if (lifeState[i])
+        n++;
+    return n > 0 && n < 3;
   }
 
   /**
