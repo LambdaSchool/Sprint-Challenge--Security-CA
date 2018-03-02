@@ -1,0 +1,9 @@
+# Personal Computer Security
+
+*As I am currently attending a 6 month school program to be a developer, my knowledge for Security is not as much as it is now.  In the near future, I will be writing code and if I am not careful, my code could get hacked and make my projects vulnerable to attacks.  The threats to consider are malware and DDoS attacks.*
+
+*One thing I could do to minimize threats is to use a password manager on my laptop.  After some research, I have decided to go with LastPass as my password manager.  What made me interested in LastPass is their ability to generate and save password for desktop applications.  I could see myself getting overwhelmed with passwords on a personal level, but also with my client/employers.  Nothing is more embarrassing when asking for the password again or realizing that the client/employer application has been hacked due to vulnerabilities and potentially be the reason for it to happen.*  
+
+*As I set myself up on LastPass, questions arised in my head such as how do I mitigate this further.  Sure, my password for my Google email account would be stored and only works when I login with LastPass.  What if my laptop was stolen?  Does LastPass provide a way to contact to shutdown my LastPass account?  A quick research and it does advise that I was to change my master password.  With the passwords stored on my LastPass, it is advisable to autogenerate passwords for my email and bank websites that I have stored on LastPass.*  
+
+*I would advise anyone who is checking out LastPass that they are not to depend on LastPass to assume that your email or bank accounts aren't hacked.  Always check those accounts to verify if everything is in order.*
