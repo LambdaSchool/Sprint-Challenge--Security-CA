@@ -46,21 +46,21 @@
 	// is >= lifeState.length - 1, lifeState[x+1] is out of range!
 
 	function getNewVal(lifeState, x) {
-		if (x < 1 || x >= lifeState.length - 1) {
-			return 0;
+		if (x < 1 || x >= lifeState.length - 1) { // checking range condition
+			return 0; // return 0 if out of range
 		}
 
-		if (lifeState[x] === 0) {
-			if (lifeState[x - 1] === 0 && lifeState[x + 1] === 0) {
-				return 0;
+		if (lifeState[x] === 0) { // If dead
+			if (lifeState[x - 1] === 0 && lifeState[x + 1] === 0) { // check if both neighbors are dead
+				return 0; // return dead
 			}
 		}
-		if (lifeState[x] === 1) {
-			if (lifeState[x - 1] === 1 && lifeState[x + 1] === 1) {
-				return 0;
+		if (lifeState[x] === 1) { // if alive
+			if (lifeState[x - 1] === 1 && lifeState[x + 1] === 1) { // check if both neighbors are alive
+				return 0; // return dead
 			}
 		}
-		return 1;
+		return 1; // All other cases are to be ALIVE!
 	}
 
 	const COLORS = [[0, 0, 0], [0x05, 0xbd, 0xf8]];
