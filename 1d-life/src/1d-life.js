@@ -1,4 +1,5 @@
-(function() {
+(() => {
+  // ^^ an IIFE - immediately invoked function expression refactored for es6 notation
   /**
    * For a given x coordinate, look at the surrounding values in
    * lifeState and figure out the new value.
@@ -16,7 +17,7 @@
    *
    *   Return the new pixel value at X depending on if the 3 pixels
    *   are on or off in a particular pattern.
-   *    
+   *
    *   Surrounding    New   Return
    *       ...         .      0
    *       ..x         x      1
@@ -38,19 +39,12 @@
    *
    * @param {*} x the current x coordinate in question
    */
-  function getNewVal(lifeState, x) {
-    // use use 43,44,46 or 43,45,46
-    // if (x <= 1 || x >= lifeState.length-1) return 0;
-    // if ((lifeState[x-1] === 0 && lifeState[x] === 0 && lifeState[x+1] === 0) || (lifeState[x-1] === 1 && lifeState[x] === 1 && lifeState[x+1] === 1)) return 0;
-    // if (lifeState[x-1] === lifeState[x] && lifeState[x] === lifeState[x+1]) return 0;
-    // else return 1;
-    return (x <= 1 || x >= lifeState.length-1) ? 0 : lifeState[x-1] === lifeState[x] && lifeState[x] === lifeState[x+1] ? 0 : 1;
-  }
+  getNewVal = (lifeState, x) => x <= 1 || x >= lifeState.length - 1 ? 0 : lifeState[x - 1] === lifeState[x] && lifeState[x] === lifeState[x + 1] ? 0 : 1;
 
   /**
    * Draw life
    */
-  function drawLife() {
+  drawLife = () => {
     // Get canvas info
     const canvas = document.querySelector("#life");
     const ctx = canvas.getContext("2d");
@@ -62,8 +56,7 @@
       new Array(canvas.width).fill(0)
     ];
 
-    let curStateIdx = 0,
-      backStateIdx = 1;
+    let curStateIdx = 0, backStateIdx = 1;
     let curState = lifeState[curStateIdx];
     let backState = lifeState[backStateIdx];
 
@@ -94,14 +87,12 @@
     }
 
     ctx.putImageData(imageData, 0, 0);
-  }
+  };
 
   /**
    * Handle window load
    */
-  function onLoad() {
-    drawLife();
-  }
+  onLoad = () => drawLife();
 
   // Main
 

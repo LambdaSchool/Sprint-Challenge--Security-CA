@@ -41,3 +41,11 @@ After you do some of the above, write 1-2 paragraphs summarizing what you did
 so it should be safe to talk about it as long as you don't share actual
 passwords/secrets). As a stretch goal, write a blog post about your security
 setup describing what you’ve learned and tips you have for others.
+
+Most of these things, I already have setup. 
+I use Password Safe, which is installed both on my pc and on my phone
+Almost all of my accounts (most importantly my credit card and bank) use two factor authentication
+I setup SSH for GitHub a month or two ago
+For work we use OpenVPN for communicating with the server while at home
+A few weeks ago I converted an older PC to Linux because running it inside Windows10 was a bit slower than I liked
+So I spent some time reading up on setting up OAuth in my applications
