@@ -62,9 +62,8 @@
       new Array(canvas.width).fill(0),
     ];
 
-    let curStateIdx = 0, backStateIdx = 1;
-    let curState = lifeState[curStateIdx];
-    let backState = lifeState[backStateIdx];
+    let curState = lifeState[0];
+    let backState = lifeState[1];
 
     curState[canvas.width >> 1] = 1; // >>1 is an integer div 2
 
@@ -88,11 +87,7 @@
         imageData.data[index+3] = 0xff;
 
       }
-
-      curStateIdx = curStateIdx == 0? 1: 0;
-      backStateIdx = curStateIdx == 0? 1: 0;
-      curState = lifeState[curStateIdx];
-      backState = lifeState[backStateIdx];
+      [curState, backState] = [backState, curState]
     }
 
     ctx.putImageData(imageData, 0, 0);
