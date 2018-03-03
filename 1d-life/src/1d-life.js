@@ -39,7 +39,7 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    return !!lifeState[x] ^ !!lifeState[x + 1] || !!lifeState[x] ^ !!lifeState[x - 1];
+    return lifeState[x] ^ lifeState[x + 1] || lifeState[x] ^ lifeState[x - 1];
   }
 
   /**
