@@ -40,8 +40,13 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    // Method-1: Implemented using truth table above:
+    //return (lifeState[x - 1] ^ lifeState[x] || lifeState[x] ^ lifeState[x + 1]);
 
-    return 0; // instead of this
+    // Method-2: Using given instructions:
+    if(x < 1 || (x >= lifeState.length - 1)) return 0;
+    if(lifeState[x-1] === lifeState[x] && lifeState[x] === lifeState[x+1]) return 0;
+    return 1;
   }
 
   /**
