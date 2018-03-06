@@ -39,9 +39,7 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    return lifeState[x] ^ lifeState[x + 1] || lifeState[x] ^ lifeState[x - 1];
   }
 
   /**
@@ -80,8 +78,8 @@
 
         color = newVal == 0? 0: 0xff;
 
-        imageData.data[index+0] = color;
-        imageData.data[index+1] = color;
+        imageData.data[index+0] = (255,0,0);
+        imageData.data[index+1] = (255,0,0);
         imageData.data[index+2] = color;
         imageData.data[index+3] = 0xff;
 
