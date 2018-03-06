@@ -4,6 +4,8 @@
 
 * [Create a 1D Cellular Automaton](1d-life/)
 
+My Live version to see - http://gameoflife.sanfordev.com/
+
 
 ## Part 2: Security and Encryption
 
