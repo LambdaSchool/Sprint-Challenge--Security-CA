@@ -18,7 +18,7 @@
    *   Return the new pixel value at X depending on if the 3 pixels
    *   are on or off in a particular pattern.
    * 
-   *   Surrounding    New   Return
+   *   Surrounding    New   Return      Frame 1 -----------> Frame 2 -------------> Frame 3, etc.
    *       ...         .      0
    *       ..x         x      1
    *       .x.         x      1
@@ -40,8 +40,29 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    const oneDArray = lifeState;
 
-    return 0; // instead of this
+    for (let i = 0; i < oneDArray.length; i++) {
+      if (oneDArray[i] < 1) {
+        return 0;
+      }
+      else if (i >= (oneDArray.length - 1)) {
+        return 0;
+      }
+      if(((oneDArray[i+1]) || (oneDArray[i-1])) && (!oneDArray[i])) {
+        return 1;
+      }
+      if((oneDArray[i+1]) && (oneDArray[i-1]) && (!oneDArray[i])) {
+        return 0;
+      }
+      if((!oneDArray[i+1]) && (!oneDArray[i-1]) && (oneDArray[i])) {
+        return 1;
+      }
+      if((!oneDArray[i+1]) && (!oneDArray[i-1]) && (!oneDArray[i])) {
+        return 0;
+      }
+      else return 0;
+    }
   }
 
   /**
