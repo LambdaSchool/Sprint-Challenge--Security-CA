@@ -40,12 +40,14 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-    const left = x-1
-    const current = x
-    const right = x+1
-    if(x < 1) lifeState[left] = 0;
-    if(x >= lifeState.length - 1) lifeState[right] = 0      
-    return !lifeState[left] | !lifeState[current] | !lifeState[right] && lifeState[left] | lifeState[current] | lifeState[right];
+
+    let left = lifeState[x - 1];
+    let current = lifeState[x];
+    let right = lifeState[x + 1];
+
+    let allOrNothing = (left && current && right) || (!left && !current && !right);
+  
+    return !allOrNothing? 1: 0;
   }
 
   /**
