@@ -40,7 +40,13 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
+    if (x < 1) lifeState[x - 1] = 0;
+    if (x >= lifeState.length - 1 ) lifeState[x + 1] = 0;
+    let count = 0;
+    for (let i = x - 1; i <= x + 1; i++) {
+      if (lifeState[i] === 1) count++;
+    }
+    if (count === 1 || count === 2) return 1;
     return 0; // instead of this
   }
 
