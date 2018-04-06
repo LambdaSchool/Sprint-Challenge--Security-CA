@@ -39,9 +39,18 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    let start = lifeState[x];
+    let left = lifeState[x - 1];
+    let right = lifeState[x + 1];
+    let sum = start + left + right;
 
-    return 0; // instead of this
+    if (x < 1 || x >= lifeState.length - 1) {
+      return 0;
+    } else if (sum === 0 || sum === 3) {
+      return 0;
+    } else {
+      return 1;
+    }
   }
 
   /**
