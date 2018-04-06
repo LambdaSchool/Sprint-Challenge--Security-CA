@@ -40,8 +40,16 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    // if out of bounds
+    if (x < 1 || x >= lifeState.length - 1) {
+      return 0;
+    }
+	  // all are the same value
+    if (lifeState[x] === lifeState[x - 1] && lifeState[x] === lifeState[x + 1]) {
+      return 0; // instead of this
+    }
+	  // they are different value
+    return 1;
   }
 
   /**
