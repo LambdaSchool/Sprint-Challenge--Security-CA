@@ -40,8 +40,12 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    const left = x-1
+    const current = x
+    const right = x+1
+    if(x < 1) lifeState[left] = 0;
+    if(x >= lifeState.length - 1) lifeState[right] = 0      
+    return !lifeState[left] | !lifeState[current] | !lifeState[right] && lifeState[left] | lifeState[current] | lifeState[right];
   }
 
   /**
