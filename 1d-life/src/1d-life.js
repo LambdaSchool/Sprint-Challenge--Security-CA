@@ -40,9 +40,37 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    let prev = x - 1
+    let next = x + 1
 
-    return 0; // instead of this
-  }
+  //   if( x > 1  && x <= lifeState.length -1) {
+  //     if( lifeState[prev] === lifeState[x] && lifeState[x]=== lifeState[next]) {
+  //       return 0;
+  //     } else {
+  //       return 1;
+  //     }
+  //   }else if ( x < 1) {
+  //     lifeState[prev] = 0;
+  //     if( lifeState[x] === 0 && lifeState[next]=== 0) {
+  //       return 0;
+  //     } else {
+  //       return 1;
+  //     }
+  //   }else {
+  //     lifeState[next] = 0;
+  //     if(lifeState[prev] === 0  && lifeState[x] === 0) {
+  //       return 0;
+  //     } else {
+  //       return 1;
+  //     }
+  // }
+    if ( x < 1 || x >= lifeState.length -1) return 0;
+    if( lifeState[prev] === lifeState[x] && lifeState[x]=== lifeState[next]) {
+      return 0;
+    } else {
+      return 1;
+    }
+ }
 
   /**
    * Draw life
