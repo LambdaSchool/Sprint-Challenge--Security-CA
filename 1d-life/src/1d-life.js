@@ -41,7 +41,8 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    //return Math.round(Math.random()); // instead of this
+    //return Math.round(Math.random()); // just testing 
+
 
     let left = lifeState[x - 1];
     let current = lifeState[x];
