@@ -40,8 +40,24 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    //all 1 or all 0 returns 0, otherise it is 1
 
     return 0; // instead of this
+    //if I have 3 dead neighbors then the values of the cells is dead or 0
+    //if I have 3 alive neighbors then the values of the cells is alive or 1
+    const cellAtX = lifeState[x];
+    const cellAtXMinus1 = (x > 0 ?  lifeState[x - 1] : 0)
+    const cellAtXPlus1 = (x < lifeState.length - 2 ?  lifeState[x + 1] : 0)
+   
+    const sumCells = cellAtX + cellAtXPlus1 + cellAtXPlus2;
+     //Get value of neighbors if they are all dead so sum is 0
+   //or if all are alive then sum is 3, then cellATx will be dead ) in the next round or alive 1
+   if (sumCells  === 0 || sumCells === 3) {
+    return 0;
+   }  else {
+    return 1;
+   }
+
   }
 
   /**
