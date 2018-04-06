@@ -41,41 +41,43 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    let l = lifeState[x - 1];
-    let r = lifeState[x + 1];
+    for (let i = 0; i < lifeState.length; i++) {
 
-    if (l < 1) { // if we've reached the start
-      l = lifeState.length - 1;
-    }
+      let l = x - 1;
+      let r = x + 1;
 
-    if (r > lifeState.length - 1) { // if we've reached the end
-      r = 0
-    }
-
-    neighborCount = lifeState[l] + lifeState[r]
-
-
-    if (x === 1) { // if cell is alive and l and r are alive 
-      if (l === 1 && r === 1) {
-        return 0
-      } else if (l === 1 && r === 0) {
-        return 1
-      } else if (l === 0 && r === 1) {
-        return 1
-      } else {
-        return 1
+      if (l < 0) {
+        l = lifeState.length - 1;
       }
-    } else { // cell is dead 
-      if (l === 1 && r === 1) {
-        return 1
-      } else if (l === 1 && r === 0) {
-        return 1
-      } else if (l === 0 && r === 1) {
-        return 1
-      } else {
-        return 0
+
+      if (r > lifeState.length - 1) {
+        r = 0
       }
+
+      if (lifeState[x] === 1) { // if cell is alive and l and r are alive 
+        if (lifeState[l] === 1 && lifeState[r] === 1) {
+          return 0
+        } else if (lifeState[l] === 1 && lifeState[r] === 0) {
+          return 1
+        } else if (lifeState[l] === 0 && lifeState[r] === 1) {
+          return 1
+        } else {
+          return 1
+        }
+      } else { // cell is dead 
+        if (lifeState[l] === 1 && lifeState[r] === 1) {
+          return 1
+        } else if (lifeState[l] === 1 && lifeState[r] === 0) {
+          return 1
+        } else if (lifeState[l] === 0 && lifeState[r] === 1) {
+          return 1
+        } else {
+          return 0
+        }
+      }
+
     }
+
 
   }
 

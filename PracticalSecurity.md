@@ -1,0 +1,1 @@
+I have been using One Password for about two years now and when I started I updated all the passwords for my most important accounts such as emails, bank info, Amazon and really anything that I have to put card information in the system. Depending on the specifics of whatever website I use, I've chosen my password accordingly (length, symbols, etc). 
