@@ -1,0 +1,10 @@
+﻿# **PERSONAL SECURITY**
+
+The step I took for improving my personal security was install i2p on my computer similar to the TOR network, the I2P network provides strong privacy protections for communication over the Internet. Many activities that would risk your privacy on the public Internet can be conducted anonymously inside I2P. The table below will summarize some of the benefits of using I2P.
+
+
+| Email                                    | Web browsing                             | Blogging and forums         | Website hosting                 | Real-time chat                    | Decentralized File Storage               |
+|------------------------------------------|------------------------------------------|-----------------------------|---------------------------------|-----------------------------------|------------------------------------------|
+| Integrated web mail interface, plugin for serverless email. | Anonymous websites, gateways to and from the public Internet. | Blogging and Syndie plugins | Integrated anonymous web server | Instant messaging and IRC clients | Tahoe-LAFS distributed filesystem plugin |
+
+There is even a github only accessible through I2P.  It is used by activists, oppressed people, journalists and whistleblowers as well as the average person.  It is intended to protect communication from dragnet surveillance and monitoring by third parties such as ISPs.  Obviously no system is fool proof, so I would still exercise caution while file sharing, or using the realtime chat.  I would however, trust the email service as well as most any other service while using i2p, however I would limit accessing the outside web from within i2p, even through the use of it's proxies, in order to limit the amount or possibility that any compromising info is leaked .  
