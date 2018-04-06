@@ -18,8 +18,8 @@
    *   Return the new pixel value at X depending on if the 3 pixels
    *   are on or off in a particular pattern.
    * 
-   *   Surrounding    New   Return
-   *       ...         .      0
+   *   Surrounding    New   Return    [1, 0, 1, 0, 1, 1, 1, 0] 0 length = 8  <-----first frame
+   *       ...         .      0       [1, 1, 1, 1, 1, 0, 1, 1] ans           <-----second frame
    *       ..x         x      1
    *       .x.         x      1
    *       .xx         x      1
@@ -40,8 +40,29 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    for(let x = 0; x < lifeState.length; x++) {
+      if(x < 1){
+        lifeState[x - 1] === 0;
+      } 
+      else if(x >= lifeState.length - 1){
+        lifeState[x+1] === 0;
+      }
+      if((lifestate[x+1] === 1 || lifeState[x-1] === 1) && (lifestate[x] === 0 )) {
+        lifeState[x] === 1;
+      }
+      if((lifestate[x+1]  === 1 && lifeState[x-1] === 1) && (lifeState[x === 1])) {
+        lifeState[x] === 0;
+      }
+      if((lifestate[x+1] === 0 && lifeState[x-1] === 0) && (lifeState[x] ===1 )) {
+        lifeState[x] === 1;
+      }
+      if((lifestate[x+1] === 0 && lifeState[x-1] === 0) && (lifeState[x] === 0 )) {
+        lifeState[x] === 0;
+      }
+      
+    }
 
-    return 0; // instead of this
+    return lifestate; // instead of this
   }
 
   /**
