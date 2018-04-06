@@ -41,7 +41,17 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+    //return Math.round(Math.random()); // just testing 
+
+
+    let left = lifeState[x - 1];
+    let current = lifeState[x];
+    let right = lifeState[x + 1];
+
+    let allOrNothing = (left && current && right) || (!left && !current && !right);
+    
+    return !allOrNothing? 1: 0;
+
   }
 
   /**
