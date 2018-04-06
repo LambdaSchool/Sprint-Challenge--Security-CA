@@ -40,8 +40,8 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    const sum = (lifeState[x - 1] + lifeState[x] + lifeState[x + 1]) << 1;
+    return (sum === 0 || sum === 6) ? 0 : 1;
   }
 
   /**
