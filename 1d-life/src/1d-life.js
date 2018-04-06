@@ -41,8 +41,44 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+    let l = lifeState[x - 1];
+    let r = lifeState[x + 1];
+
+    if (l < 1) { // if we've reached the start
+      l = lifeState.length - 1;
+    }
+
+    if (r > lifeState.length - 1) { // if we've reached the end
+      r = 0
+    }
+
+    neighborCount = lifeState[l] + lifeState[r]
+
+
+    if (x === 1) { // if cell is alive and l and r are alive 
+      if (l === 1 && r === 1) {
+        return 0
+      } else if (l === 1 && r === 0) {
+        return 1
+      } else if (l === 0 && r === 1) {
+        return 1
+      } else {
+        return 1
+      }
+    } else { // cell is dead 
+      if (l === 1 && r === 1) {
+        return 1
+      } else if (l === 1 && r === 0) {
+        return 1
+      } else if (l === 0 && r === 1) {
+        return 1
+      } else {
+        return 0
+      }
+    }
+
   }
+
 
   /**
    * Draw life
@@ -78,17 +114,17 @@
 
         index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0? 0: 0xff;
+        color = newVal == 0 ? 0 : 0xff;
 
-        imageData.data[index+0] = color;
-        imageData.data[index+1] = color;
-        imageData.data[index+2] = color;
-        imageData.data[index+3] = 0xff;
+        imageData.data[index + 0] = color;
+        imageData.data[index + 1] = color;
+        imageData.data[index + 2] = color;
+        imageData.data[index + 3] = 0xff;
 
       }
 
-      curStateIdx = curStateIdx == 0? 1: 0;
-      backStateIdx = curStateIdx == 0? 1: 0;
+      curStateIdx = curStateIdx == 0 ? 1 : 0;
+      backStateIdx = curStateIdx == 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
@@ -102,9 +138,9 @@
   function onLoad() {
     drawLife();
   }
-  
+
   // Main
 
-	window.addEventListener('load', onLoad);
+  window.addEventListener('load', onLoad);
 
 }());
