@@ -1,6 +1,5 @@
 /* eslint-disable */
 (function () {
-  
   /**
    * For a given x coordinate, look at the surrounding values in
    * lifeState and figure out the new value.
