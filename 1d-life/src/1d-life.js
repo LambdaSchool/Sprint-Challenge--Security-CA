@@ -41,7 +41,13 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+    let left = lifeState[x - 1];
+    let middle = lifeState[x];
+    let right = lifeState[x + 1];
+
+    let initialize = (left && middle && right) || (!left && !middle && !right);
+
+    return !initialize ? 1 : 0; // instead of this
   }
 
   /**
