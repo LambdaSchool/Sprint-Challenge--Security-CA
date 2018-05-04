@@ -40,8 +40,9 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    return lifeState[x] ^ lifeState[x - 1] || lifeState[x] ^ lifeState[x + 1]
+    return 0;
+    
   }
 
   /**
