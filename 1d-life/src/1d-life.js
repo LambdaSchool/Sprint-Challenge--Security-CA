@@ -38,11 +38,11 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    if (x < 1) { // First element, no left side
-      lifeState[x - 1] = 0;
-    } else if (x > lifeState.length - 1) { // Last element, no right side
-      lifeState[x + 1] = 0;
-    } 
+    // if (x < 1) { // First element, no left side
+    //   lifeState[x - 1] = 0;
+    // } else if (x > lifeState.length - 1) { // Last element, no right side
+    //   lifeState[x + 1] = 0;
+    // } 
     // if (lifeState[x]) { // x is alive
     //   if (lifeState[x - 1] === 1 && lifeState[x + 1] === 1) {
     //     return 0;
