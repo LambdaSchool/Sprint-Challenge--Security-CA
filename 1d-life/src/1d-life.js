@@ -46,10 +46,7 @@
   function getNewVal(lifeState, x) {
     if (x < 1) lifeState[x - 1] = 0;
     if (x >= lifeState.length - 1) lifeState[x+1] = 0;
-    console.log(lifeState[x-1],lifeState[x],lifeState[x+1]);
-    if ((lifeState[x - 1] === 0 && lifeState[x] === 0 && lifeState[x + 1] === 0)) return 0;
-    if (lifeState[x - 1] === 1 && lifeState[x] === 1 && lifeState[x + 1] === 1) return 0;
-    return 1;
+    return lifeState[x - 1] === lifeState[x] && lifeState[x] === lifeState[x + 1] ? 0 : 1;
   }
   /**
    * Draw life

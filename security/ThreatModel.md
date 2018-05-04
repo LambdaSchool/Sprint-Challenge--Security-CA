@@ -30,5 +30,5 @@
 * Maintain banking specific email accounts, and __'burner'__ or __'throwaway'__ email accounts to register with other websites
 * Maintain the **strictest** social media privacy settings allowed by each platform
 * Update software when prompted to do so by ***trusted*** source
-* Back up data to a ***trusted*** cloud service or external storage device
+* Backup data to a ***trusted*** cloud service or external storage device
 * Use a password manager to automate separate password usage.
