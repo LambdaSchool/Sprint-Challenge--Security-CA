@@ -50,7 +50,7 @@
       return 0
     }
 
-    return 1; // instead of this
+    return 1; 
   }
 
   /**
