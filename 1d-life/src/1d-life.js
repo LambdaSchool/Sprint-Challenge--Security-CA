@@ -1,5 +1,6 @@
+/* eslint-disable */
 (function () {
-
+  
   /**
    * For a given x coordinate, look at the surrounding values in
    * lifeState and figure out the new value.
@@ -10,14 +11,16 @@
    * 
    *   Look at the x-1 (left), x (current). and x+1 (right) pixels.
    * 
-   *   Careful: if x is < 1 then lifeState[x-1] is out of range! if x
-   *   is >= lifeState.length - 1, lifeState[x+1] is out of range!
+   *   Careful: 
+   *   if x is < 1 then lifeState[x-1] is out of range! 
+   *   if x is >= lifeState.length - 1, lifeState[x+1] is out of range!
    * 
    *   (Out of range values are assumed to be 0.)
    * 
-   *   Return the new pixel value at X depending on if the 3 pixels
+   *   Return the new pixel value at X depending on, if the 3 pixels
    *   are on or off in a particular pattern.
    * 
+   *   . = 0 | x = 1
    *   Surrounding    New   Return
    *       ...         .      0
    *       ..x         x      1
@@ -37,13 +40,18 @@
    * of anything?
    * 
    * @param {*} x the current x coordinate in question
+   *  if x is < 1 then lifeState[x-1] is out of range! 
+   *  if x
+   *   is >= lifeState.length - 1, lifeState[x+1] is out of range!
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    if (x < 1) lifeState[x - 1] = 0;
+    if (x >= lifeState.length - 1) lifeState[x+1] = 0;
+    console.log(lifeState[x-1],lifeState[x],lifeState[x+1]);
+    if ((lifeState[x - 1] === 0 && lifeState[x] === 0 && lifeState[x + 1] === 0)) return 0;
+    if (lifeState[x - 1] === 1 && lifeState[x] === 1 && lifeState[x + 1] === 1) return 0;
+    return 1;
   }
-
   /**
    * Draw life
    */
@@ -78,7 +86,7 @@
 
         index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0? 0: 0xff;
+        color = newVal === 0 ? 0 : 0xff;
 
         imageData.data[index+0] = color;
         imageData.data[index+1] = color;
@@ -87,8 +95,8 @@
 
       }
 
-      curStateIdx = curStateIdx == 0? 1: 0;
-      backStateIdx = curStateIdx == 0? 1: 0;
+      curStateIdx = curStateIdx === 0 ? 1 : 0;
+      backStateIdx = curStateIdx === 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
