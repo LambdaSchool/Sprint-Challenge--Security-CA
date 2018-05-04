@@ -1,0 +1,3 @@
++ I have been using [1Password](https://1password.com/) for many years, and I usually use this app for important accounts such as bank, email, social media, etc. Or I always try to choose a password as strong as possible with length, symbols, a combination of different language's word. 
++ I was considering buying a cam for my cat. I decided not to buy small/medium-sized Chinese products that could have a back door, no matter how cheap. 
++ This week's class made me to set up 2-factor authentication for many accounts like Paypal, gmail, outlook, etc. 
