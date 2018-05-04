@@ -1,0 +1,5 @@
+As I am on a Windows machine, I am at the highest risk of random malware, keyloggers, etc. So the first thing I did was implement Dashlane, a password manager and digital wallet. I am still looking into the digital wallet's security, but have fully embraced the password manager. I also regularly schedule and run malware detection software and clean up my system. My next step would be to look into an open-source, free-to-use anti-virus software. I do not like the commercial ones that introduce too much bloatware, and Window's seems to do the opposite of what I need (blocks too many common programs).
+
+For most of my accounts, I have set up two-factor authentication either with text confirmations or Google authenticator. This includes everything from bank accounts to gaming accounts. 
+
+I have been looking into Linux for a very long time, and would like to make the transition once I am done with Lambda School so I do not have to get used to a new OS while learning other things. I will start to transition to Ubuntu most likely, as it seems to be a good Linux starter and does not have nearly as many attack possibilities as a Windows machine does. 
