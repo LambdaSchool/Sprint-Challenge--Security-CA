@@ -42,8 +42,7 @@
     let mid = lifeState[x];
     let right = x + 1 > lifeState.length - 1 ? 0 : lifeState[x + 1];
 
-    if (left === 0 && mid === 0 && right === 0) return 0;
-    if (left === 1 && mid === 1 && right === 1) return 0;
+    if (left === mid && mid === right) return 0;
 
     return 1;
   }
