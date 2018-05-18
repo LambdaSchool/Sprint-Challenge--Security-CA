@@ -28,6 +28,17 @@
    *       xx.         x      1
    *       xxx         .      0
    * 
+   * Converted to 0's and 1's
+   *    Surrounding    New   Return
+   *   0    000         0      0
+   *   1    001         1      1
+   *   2    010         1      1
+   *   3    011         1      1
+   *   4    100         1      1
+   *   5    101         1      1
+   *   6    110         1      1
+   *   7    111         0      0
+   * 
    * Optimal solution is 5 lines of code, but you can use more if you
    * want to. :)
    * 
@@ -41,7 +52,16 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+    const left = lifeState[x-1];
+    const middle = lifeState[x];
+    const right = lifeState[x+1];
+
+    const comb = parseInt(`${left || 0}${middle}${right || 0}`, 2);
+    // Just found out that 0b111 === 7 evaluates to true
+    return comb === 0 || comb === 7 ? 0 : 1;
+
+    // return 0; // instead of this
+
   }
 
   /**
