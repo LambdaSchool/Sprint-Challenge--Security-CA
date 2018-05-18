@@ -12,5 +12,5 @@
 ## Tasks
 
 * [x] Make a PR
-* [ ] Cellular Automata
-* [ ] Threat Model Exercise
+* [x] Cellular Automata
+* [x] Threat Model Exercise
