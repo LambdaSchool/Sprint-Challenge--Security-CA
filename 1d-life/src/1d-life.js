@@ -80,11 +80,11 @@
 
         index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0? 0: 0xff;
+        color = newVal == 0 ? 0 : 0xff;
 
-        imageData.data[index+0] = color;
+        imageData.data[index+0] = 0x00;
         imageData.data[index+1] = color;
-        imageData.data[index+2] = color;
+        imageData.data[index+2] = 0x00;
         imageData.data[index+3] = 0xff;
 
       }
