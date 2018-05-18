@@ -39,9 +39,17 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    let alive =0;
+    let left = lifeState[x-1];
+    let right = lifeState[x+1];
+    
+    alive +=lifeState[x]; // add alive points to the current life state
+    if (x > 0) alive += left;
+    if (x <lifeState.length -1) alive += right;
+  
+    
 
-    return 0; // instead of this
+    return 0 < alive && alive <3; // instead of this
   }
 
   /**
