@@ -43,10 +43,12 @@
     let livingCells = 0;
 
     if (x < 1){
+      if (!lifeState[x + 1] && !lifeState[x]) return 0;
       if (lifeState[x + 1] || lifeState[x]) livingCells++;
     }
 
     if (x >= lifeState.length - 1){
+      if (!lifeState[x - 1] && !lifeState[x]) return 0;
       if (lifeState[x - 1] || lifeState[x]) livingCells++;
     }
 
