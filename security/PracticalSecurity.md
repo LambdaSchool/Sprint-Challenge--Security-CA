@@ -2,10 +2,10 @@
 It may be completely irrational, but I don't trust password managers.  I am essentially giving some company access to all my passwords under the guise of protection.  While it would be counterintuitive for a company to compromise their business by doing this, there is literally nothing stopping them.  Not to mention their code could have a security flaw in and of itself, allowing some black hat to steal all of my passwords.  I also don't save any passwords in my browser / applications (except for passwords that I don't care about like zoom or repl.it).  I don't even use my real name for things most of the time.
 
 ### Two Factor Authentication
-Everything I use already has this built-in (unless I am not fully understanding two-factor authenication).  
+Everything I use already has this built-in (unless I am not fully understanding two-factor authentication).  
 * My bank/credit cards verify my device and password.  If I login from a difference device, it sends me an e-mail to verify I was the one trying to log in before letting me move forward.
 * I don't use facebook/twitter/etc.  
-* Literally everything else, I could care less if it gets hacked.  Oh no, someone can edit my LinkedIn...
+* Literally everything else, I couldn't care less if it gets hacked.  Oh no, someone can edit my LinkedIn...
 
 
 ### SSH Keypairs for Github
