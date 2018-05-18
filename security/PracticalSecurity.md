@@ -1,0 +1,1 @@
+I set up BitWarden and changed my passwords for key accounts, such as Gmail, WellsFargo, PayPal, and Amazon. I used long encryptions and devised a discreet but memorable passphrase for this account. I also have two-factor auth setup for my various accounts and will, over time, obfuscate my password hints.
