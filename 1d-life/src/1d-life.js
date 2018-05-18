@@ -40,8 +40,6 @@
    */
   function getNewVal(lifeState, x) {
     let zeroOrOne = 0;
-    x < 1 && lifeState[x+1] === 1 ? zeroOrOne = 1 : null;
-    x === lifeState.length && lifeState[x-1] === 1 ? zeroOrOne = 1 : null;
     (x >= 1 && x < lifeState.length) && (lifeState[x-1] === 1 || lifeState[x+1] === 1 ) && !(lifeState[x-1] === 1 && lifeState[x+1] === 1) ? zeroOrOne = 1 : null;
     return zeroOrOne;
   }
