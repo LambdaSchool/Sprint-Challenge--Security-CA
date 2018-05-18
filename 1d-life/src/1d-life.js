@@ -39,10 +39,13 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    // console.log(lifeState, "<-- is lifeState");
+    // console.log("x is : ", x);
 
-    return 0; // instead of this
-  }
+    return ( ((lifeState[x-1] && lifeState[x+1]) && (lifeState[x])) || ((!lifeState[x-1] && !lifeState[x+1] ) && !(lifeState[x])) ) ? 0:1;
+      
+  
+}
 
   /**
    * Draw life
