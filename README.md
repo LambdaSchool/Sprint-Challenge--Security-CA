@@ -1,3 +1,4 @@
+
 # Sprint Challenge: Security and Cellular Automata
 
 ## Part 1: Cellular Automata
