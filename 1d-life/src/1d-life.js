@@ -41,15 +41,16 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
     
-    let left = lifeState[x - 1];
-    let current = lifeState[x];
-    let right = lifeState[x + 1];
+    const left = lifeState[x - 1];
+    const current = lifeState[x];
+    const right = lifeState[x + 1];
 
-    let all = (left && current && right) || (!left && !current && !right);
+    const all = (left && current && right) || (!left && !current && !right);
 
-    return !all? 1: 0;
+    return !all ? 1 : 0;
   }
-    // console.log(left, mid, right);
+ 
+    // console.log(left, current, right);
     // if (left === 0 && mid === 0 && right === 0) {
     //   return 0;
     // }
