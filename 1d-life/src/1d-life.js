@@ -40,7 +40,17 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
+    if (x < 1) {
+      if (lifeState[x+1] === 1) return 1;
+    }
+    else if (x === lifeState.length) {
+      if (lifeState[x-1] === 1) return 1;
+    }
+    else if (x >= 1 && x < lifeState.length) {
+      if (lifeState[x-1] === 1 && lifeState[x+1] === 1) return 0;
+      if (lifeState[x-1] === 1 || lifeState[x+1] === 1) return 1;
+      return 0;
+    }
     return 0; // instead of this
   }
 
