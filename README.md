@@ -8,3 +8,9 @@
 ## Part 2: Security and Encryption
 
 * [Improve your practical personal security](security/)
+
+## Tasks
+
+* [x] Make a PR
+* [x] Cellular Automata
+* [x] Threat Model Exercise
