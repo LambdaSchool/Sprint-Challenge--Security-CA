@@ -1,0 +1,5 @@
+I deleted the auto-fill information stored in my Chrome browser and disabled its functionality completely. It may be a pain to type all that stuff in every time I need to, but the added feeling of security makes it worth the trouble. Doing so made me think more about which software I frequently use and what kind of security risks exist for that software. I use Steam a lot, and have many games associated with my account, so I enabled two-factor authorization for logging into Steam. Now I need my phone on me whenever I want to play games on my computer. However, games aren't the only things I use my computer for; I am also a developer. Thus, I installed Ubuntu on VirtualBox, so I can program using only secure, open source software in an environment that is separate from my windows partition. When I get a job, I will have have two separate computers: one for work and one for myself. This way, any potential risk to me will not subsequently put my company at risk as well.
+
+I could potentially increase my security by installing a raspberry pi adblocker and VPN, but those are plans for the future.
+
+:wave:

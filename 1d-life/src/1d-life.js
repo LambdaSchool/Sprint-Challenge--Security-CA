@@ -39,9 +39,8 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    const sum = (lifeState[x-1]||0) + lifeState[x] + (lifeState[x+1]||0);
+    return (sum !== 3 && sum !== 0) ? 1 : 0;
   }
 
   /**
