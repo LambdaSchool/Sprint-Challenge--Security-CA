@@ -17,7 +17,7 @@ What I suggest:
 - Install a secure firewall if there isn't one
 - Update the encrpytion scheme and / or the firmware
 
-Doing these things will make sure we as a team can move forward in a more **secure** developer invironment.
+Doing these things will make sure we as a team can move forward in a more **secure** developer environment.
 
 A concerned developer on the team,
 
