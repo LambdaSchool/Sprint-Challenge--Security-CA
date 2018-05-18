@@ -45,13 +45,7 @@
     } else {
       if(lifeState[x] === lifeState.length || lifeState[x] === lifeState[0]) return 0;
       else return 1;
-    }
-
-    
-    
-    
-    
-    // instead of this
+    } return 1;
   }
 
   /**
