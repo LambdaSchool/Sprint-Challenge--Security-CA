@@ -40,8 +40,16 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    let currentPixel = lifeState[x];
+    let leftPixel = lifeState[x-1];
+    let rightPixel = lifeState[x+1];
+    let deadOrAlive = (currentPixel && leftPixel && rightPixel) || (!currentPixel && !leftPixel && !rightPixel);
+    
+    if(deadOrAlive === false) {
+      return 1;
+    } else {
+      return 0;
+    }
   }
 
   /**
