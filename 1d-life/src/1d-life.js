@@ -43,10 +43,8 @@
     const before = x-1 > 0 ? lifeState[x-1] : 0;
     const now = lifeState[x];
     const after = x < lifeState.length-1 ? lifeState[x+1] : 0;
-    if (before + now + after > 0 && before + now + after < 3)
-      return 1;
-    else
-      return 0; // instead of this
+    
+    return (before + now + after > 0 && before + now + after < 3) ? 1 : 0;
   }
 
   /**
