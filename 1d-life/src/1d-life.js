@@ -40,7 +40,7 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-    const livingCells = 0;
+    let livingCells = 0;
 
     if (x < 1){
       if (lifeState[x + 1] || lifeState[x]) livingCells++;
@@ -51,11 +51,11 @@
     }
 
     if (x > 1 || x <= lifeState.length - 1){
+      if (lifeState[x] && lifeState[x - 1] && lifeState[x + 1]) return 0;
       if (lifeState[x] || lifeState[x - 1] || lifeState[x + 1]) livingCells++;
     }
 
     if (livingCells) return 1;
-    else return 0;
   }
 
   /**
