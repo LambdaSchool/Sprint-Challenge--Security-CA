@@ -1,23 +1,22 @@
-(function () {
-
+(function() {
   /**
    * For a given x coordinate, look at the surrounding values in
    * lifeState and figure out the new value.
-   * 
+   *
    * lifeState is a 1D array of life values. 0 for dead, 1 for alive.
-   * 
+   *
    * Life rules:
-   * 
+   *
    *   Look at the x-1 (left), x (current). and x+1 (right) pixels.
-   * 
+   *
    *   Careful: if x is < 1 then lifeState[x-1] is out of range! if x
    *   is >= lifeState.length - 1, lifeState[x+1] is out of range!
-   * 
+   *
    *   (Out of range values are assumed to be 0.)
-   * 
+   *
    *   Return the new pixel value at X depending on if the 3 pixels
    *   are on or off in a particular pattern.
-   * 
+   *
    *   Surrounding    New   Return
    *       ...         .      0
    *       ..x         x      1
@@ -27,30 +26,29 @@
    *       x.x         x      1
    *       xx.         x      1
    *       xxx         .      0
-   * 
+   *
    * Optimal solution is 5 lines of code, but you can use more if you
    * want to. :)
-   * 
+   *
    * Hint 1: the short solution uses bit shifting and ORing.
-   * 
-   * Hint 2: Look at the pattern in "Surrounding", above. Remind you
+   *
+   * Hint 2: Look at the pattern in 'Surrounding', above. Remind you
    * of anything?
-   * 
+   *
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    const a = (x - 1 >= 0) ? lifeState[x - 1] : 0 // left state
+    const a = x - 1 >= 0 ? lifeState[x - 1] : 0; // left state
     const b = lifeState[x]; // current state
-    const c = (x + 1 <= lifeState.length - 1) ? lifeState[x + 1] : 0 // right state
+    const c = x + 1 <= lifeState.length - 1 ? lifeState[x + 1] : 0; // right state
     const sum = a + b + c; // state sum
-    return (sum > 0 && sum < 3) ? 1 : 0; // per chart, return 0 or 1
+    return sum > 0 && sum < 3 ? 1 : 0; // per chart, return 0 or 1
   }
 
   /**
    * Draw life
    */
   function drawLife() {
-
     // Get canvas info
     const canvas = document.querySelector('#life');
     const ctx = canvas.getContext('2d');
@@ -59,10 +57,11 @@
     // Get our double buffer life states
     const lifeState = [
       new Array(canvas.width).fill(0),
-      new Array(canvas.width).fill(0),
+      new Array(canvas.width).fill(0)
     ];
 
-    let curStateIdx = 0, backStateIdx = 1;
+    let curStateIdx = 0,
+      backStateIdx = 1;
     let curState = lifeState[curStateIdx];
     let backState = lifeState[backStateIdx];
 
@@ -70,10 +69,8 @@
 
     // Go through all our generations
     for (let generation = 0; generation < canvas.height; generation++) {
-
       // Go through all the pixels
       for (let x = 0; x < canvas.width; x++) {
-
         // Compute the new value
         let newVal = getNewVal(curState, x);
         backState[x] = newVal;
@@ -82,15 +79,14 @@
 
         color = newVal == 0 ? 0 : 0xff;
 
-        imageData.data[index+0] = 0x00;
-        imageData.data[index+1] = color;
-        imageData.data[index+2] = 0x00;
-        imageData.data[index+3] = 0xff;
-
+        imageData.data[index + 0] = 0x00;
+        imageData.data[index + 1] = color;
+        imageData.data[index + 2] = 0x00;
+        imageData.data[index + 3] = 0xff;
       }
 
-      curStateIdx = curStateIdx == 0? 1: 0;
-      backStateIdx = curStateIdx == 0? 1: 0;
+      curStateIdx = curStateIdx == 0 ? 1 : 0;
+      backStateIdx = curStateIdx == 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
@@ -104,9 +100,8 @@
   function onLoad() {
     drawLife();
   }
-  
+
   // Main
 
-	window.addEventListener('load', onLoad);
-
-}());
+  window.addEventListener('load', onLoad);
+})();
