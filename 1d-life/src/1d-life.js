@@ -76,9 +76,9 @@
         let newVal = getNewVal(curState, x);
         backState[x] = newVal;
 
-        index = (generation * canvas.width + x) * 4;
+        let index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0 ? 0 : 0xff;
+        let color = newVal == 0 ? 0 : 0xff;
 
         imageData.data[index + 0] = color;
         imageData.data[index + 1] = color;
