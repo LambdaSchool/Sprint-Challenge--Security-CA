@@ -41,7 +41,13 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+    let right = lifeState [x + 1];
+    let left = lifeState[x - 1];
+    let current = lifeState[x];
+
+    let build = (current && right && left) || (!current && !right && !left);
+    
+    return !build ? 1 : 0;
   }
 
   /**
