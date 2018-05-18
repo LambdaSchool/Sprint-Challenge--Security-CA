@@ -39,9 +39,9 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    let zeroOrOne = 0;
+    (x >= 1 && x < lifeState.length) && (lifeState[x-1] === 1 || lifeState[x+1] === 1 ) && !(lifeState[x-1] === 1 && lifeState[x+1] === 1) ? zeroOrOne = 1 : null;
+    return zeroOrOne;
   }
 
   /**
