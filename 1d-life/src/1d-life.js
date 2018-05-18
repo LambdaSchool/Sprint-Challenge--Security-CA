@@ -40,8 +40,14 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    let left = lifeState[x - 1];
+    let center = lifeState[x];
+    let right = lifeState[x + 1];
 
-    return 0; // instead of this
+    if (x < 1 || x >= lifeState.length - 1) return 0;
+    if (center === left && center === right) return 0;
+    
+    return 1; // instead of this
   }
 
   /**
@@ -78,17 +84,17 @@
 
         index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0? 0: 0xff;
+        color = newVal == 0 ? 0 : 0xff;
 
-        imageData.data[index+0] = color;
-        imageData.data[index+1] = color;
-        imageData.data[index+2] = color;
-        imageData.data[index+3] = 0xff;
+        imageData.data[index + 0] = color;
+        imageData.data[index + 1] = color;
+        imageData.data[index + 2] = color;
+        imageData.data[index + 3] = 0xff;
 
       }
 
-      curStateIdx = curStateIdx == 0? 1: 0;
-      backStateIdx = curStateIdx == 0? 1: 0;
+      curStateIdx = curStateIdx == 0 ? 1 : 0;
+      backStateIdx = curStateIdx == 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
