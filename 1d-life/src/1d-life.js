@@ -45,7 +45,10 @@
     const binary = parseInt(first.toString() + second.toString() + third.toString(), 2);
     return (binary === 0) | (binary === 7) ? 0 : 1;
 
-    // return (lifeState[x - 1] && lifeState[x] && lifeState[x + 1]) || (!lifeState[x - 1] && !lifeState[x] && !lifeState[x + 1]) ? 0 : 1;
+    // return (lifeState[x - 1] && lifeState[x] && lifeState[x + 1]) ||
+    //        (!lifeState[x - 1] && !lifeState[x] && !lifeState[x + 1])
+    //         ? 0
+    //         : 1;
   }
 
   /**
