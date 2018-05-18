@@ -40,8 +40,25 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+		if (x >= 1 && x < lifeState.length) {
+			if (lifeState[x] === 1) {
+				return lifeState[x - 1] + lifeState[x + 1] >= 1 ? 0 : 1;
+			} else {
+				return lifeState[x - 1] + lifeState[x + 1] >= 1 ? 1 : 0;
+			}
+		} else if (x === 0) {
+			if (lifeState[x] === 1) {
+				return 1;
+			} else {
+				return lifeState[x + 1] === 1 ? 1 : 0;
+			}
+		} else if (x === lifeState.length) {
+			if (lifeState[x] === 1) {
+				return 1 
+			} else {
+				return lifeState[x - 1] === 1 ? 1 : 0;
+			}
+		}
   }
 
   /**
