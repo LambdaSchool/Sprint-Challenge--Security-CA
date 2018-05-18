@@ -38,17 +38,92 @@
    * 
    * @param {*} x the current x coordinate in question
    */
-  function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+  // V1
+  function getNewVal(lifeState, index) {
+    let left = lifeState[index - 1];
+    let right = lifeState[index + 1];
+    let current = lifeState[index];
+    let lifeLen = lifeState.length;
+
+    if (current === left && current === right) return 0; return 1;
   }
+
+  // V2
+  // function getNewVal(lifeState, index) {
+  //   let left = lifeState[index - 1];
+  //   let right = lifeState[index + 1];
+  //   let current = lifeState[index];
+  //   let lifeLen = lifeState.length;
+    
+  //   // x is dead
+  //   if(current === 0 && index > 0 || index < lifeLen - 1){
+  //     if(left === 0 && right === 0){
+  //       return 0;
+  //     }else{
+  //       return 1;
+  //     }
+  //   }else{
+  //     if(left === 1 || right === 1){
+  //       return 1;
+  //     }else{
+  //       return 0;
+  //     }
+  //   }
+
+  //   // x is alive
+  //   if(current === 1 && index > 0 || index < lifeLen - 1){
+  //     if(left === 1 && right === 1){
+  //       return 0;
+  //     }else{
+  //       return 1;
+  //     }
+  //   }else{
+  //       return 1;
+  //   }
+  // }
+
+  // V3
+  // function getNewVal(lifeState, index) {
+  //   let left = lifeState[index - 1];
+  //   let right = lifeState[index + 1];
+  //   let current = lifeState[index];
+  //   let lifeLen = lifeState.length;
+    
+  //   // x is dead
+  //   if(current === 0 && index > 0  && index < lifeLen - 1){
+  //     if(left === 0 && right === 0){
+  //       return 1;
+  //     }else{
+  //       return 0;
+  //     }
+  //   }else{
+  //     if(left === 1 && right === 1){
+  //       return 1;
+  //     }else{
+  //       return 0;
+  //     }
+  //   }
+
+  //   // x is alive
+  //   if(current === 1 && index > 0 || index < lifeLen - 1){
+  //     if(left === 1 && right === 1){
+  //       return 0;
+  //     }else{
+  //       return 1;
+  //     }
+  //   }else{
+  //       return 0;
+  //   }
+  //   if (left === current && current === right) return 0; 
+  //   else return 1;
+  //   }
+  // }
 
   /**
    * Draw life
    */
   function drawLife() {
-
     // Get canvas info
     const canvas = document.querySelector('#life');
     const ctx = canvas.getContext('2d');
@@ -65,7 +140,6 @@
     let backState = lifeState[backStateIdx];
 
     curState[canvas.width >> 1] = 1; // >>1 is an integer div 2
-
     // Go through all our generations
     for (let generation = 0; generation < canvas.height; generation++) {
 
@@ -73,7 +147,9 @@
       for (let x = 0; x < canvas.width; x++) {
 
         // Compute the new value
+        // let newVal getNewVal(curState, x);
         let newVal = getNewVal(curState, x);
+
         backState[x] = newVal;
 
         index = (generation * canvas.width + x) * 4;
