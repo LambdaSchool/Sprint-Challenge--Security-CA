@@ -39,11 +39,11 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    const a = (x - 1 >= 0) ? lifeState[x - 1] : 0
-    const b = lifeState[x];
-    const c = (x + 1 <= lifeState.length - 1) ? lifeState[x + 1] : 0
-    const sum = a + b + c;
-    return (sum > 0 && sum < 3) ? 1 : 0;
+    const a = (x - 1 >= 0) ? lifeState[x - 1] : 0 // left state
+    const b = lifeState[x]; // current state
+    const c = (x + 1 <= lifeState.length - 1) ? lifeState[x + 1] : 0 // right state
+    const sum = a + b + c; // state sum
+    return (sum > 0 && sum < 3) ? 1 : 0; // per chart, return 0 or 1
   }
 
   /**
