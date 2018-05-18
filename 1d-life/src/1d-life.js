@@ -40,13 +40,14 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-    if (x < 1 || x >= lifeState.length - 1) {
-      return 0;
-    }
-    if (lifeState[x] === lifeState[x - 1] && lifeState[x] === lifeState[x + 1]) {
-      return 0;
-    }
-    return 1;
+    const current = lifeState[x];
+    const prev = lifeState[x - 1];
+    const next = lifeState[x + 1];
+    const sum = current + prev + next;
+
+    if (typeof prev == 'undefined' || typeof next == 'undefined') return 0;
+    if (sum === 0 || sum === 3) return 0;
+    return 1; // instead of this
   }
 
   /**
