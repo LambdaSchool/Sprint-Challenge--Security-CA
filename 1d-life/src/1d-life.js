@@ -18,14 +18,14 @@
    *   are on or off in a particular pattern.
    *
    *   Surrounding    New   Return
-   *       ...         .      0
-   *       ..x         x      1
-   *       .x.         x      1
-   *       .xx         x      1
-   *       x..         x      1
-   *       x.x         x      1
-   *       xx.         x      1
-   *       xxx         .      0
+   *       000         0      0
+   *       001         1      1
+   *       010         1      1
+   *       011         1      1
+   *       100         1      1
+   *       101         1      1
+   *       110         1      1
+   *       111         0      0
    *
    * Optimal solution is 5 lines of code, but you can use more if you
    * want to. :)
@@ -54,6 +54,7 @@
   /**
    * Draw life
    */
+
   function drawLife() {
     // Get canvas info
     const canvas = document.querySelector('#life');
