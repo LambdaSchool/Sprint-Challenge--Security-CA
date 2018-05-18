@@ -41,7 +41,15 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+      let alive = 0;
+      const left  = lifeState[x-1];
+      const right = lifeState[x+1];
+
+      alive += lifeState[x];
+      alive += x > 0 ? left : '';
+      alive += x < lifeState.length -1 ? right : '';
+
+      return (alive > 0 && alive < 3);
   }
 
   /**
@@ -74,6 +82,7 @@
 
         // Compute the new value
         let newVal = getNewVal(curState, x);
+        // break;
         backState[x] = newVal;
 
         index = (generation * canvas.width + x) * 4;
