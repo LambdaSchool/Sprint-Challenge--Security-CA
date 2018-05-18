@@ -17,4 +17,3 @@ I remember wanting a YubiKey after reading about it for the first time a while b
 I have actually been deciding on a Linux distro to install on my desktop recently. I was leaning towards Mint, but I may have to do some digging into Kali now.
 
 Finally, I just set up a GPG key on my GitHub account. While obviously impossible to completely eliminate all risk of an attack, I believe that these steps definitely help minimize the chances of being compromised.
-
