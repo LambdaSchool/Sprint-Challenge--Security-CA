@@ -39,9 +39,12 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    const leftNeighbor = (x < 1) ? 0 : lifeState[(x - 1)];
+    const rightNeighbor = (x >= lifeState.length - 1) ? 0 : lifeState[(x + 1)];
+    const xValue = lifeState[x];
+    const numCellsAlive = leftNeighbor + rightNeighbor + xValue;
 
-    return 0; // instead of this
+    return (numCellsAlive === 0 || numCellsAlive === 3) ? 0 : 1;
   }
 
   /**
@@ -102,9 +105,6 @@
   function onLoad() {
     drawLife();
   }
-  
-  // Main
 
 	window.addEventListener('load', onLoad);
-
 }());
