@@ -1,0 +1,3 @@
+# Part Two
+
+After performing a de facto assessment of my own personal situation in the above exercise, I have researched available security upgrades I can make in my life, after identifying an abundance of security issues and concerns that have not been previously realized. First and foremost, I will be implementing a password management system, specifically, KeePass. I currently utilize an encrypted Excel spreadsheet that is password protected, however, the additional security and robustness of a password management application makes this the first security upgrade that I am implementing. This change will be implemented in my life by the end of the weekend, as I am still researching and executing the actions necessary to implement this layer of protection.
