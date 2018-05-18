@@ -1,3 +1,4 @@
+console.time();
 (function() {
   /**
    * For a given x coordinate, look at the surrounding values in
@@ -62,6 +63,8 @@
     return state;
     // if((totalState === 111) || (totalState === 000) ) return 0;
     // return 1;
+    // Punits Bitwise
+    //return ( ((lifeState[x-1] && lifeState[x+1]) && (lifeState[x])) || ((!lifeState[x-1] && !lifeState[x+1] ) && !(lifeState[x])) ) ? 0:1;
   }
 
   /**
@@ -124,3 +127,4 @@
 
   window.addEventListener('load', onLoad);
 })();
+console.timeEnd();
