@@ -40,8 +40,14 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-    if(lifeState[x-1] === lifeState[x] && lifeState[x] === lifeState [x+1]) return 0;
-    else return 1;
+    if(lifeState[x-1] < lifeState.length && lifeState[x+1] < lifeState.length ) {
+      if(lifeState[x-1] === lifeState[x] && lifeState[x] === lifeState [x+1]) return 0;
+    } else {
+      if(lifeState[x] === lifeState.length || lifeState[x] === lifeState[0]) return 0;
+      else return 1;
+    }
+
+    
     
     
     
