@@ -1,0 +1,3 @@
+I use Onepass password manager for most of my accounts. I mostly try to access from my laptop. I try to avoid accessing my emails or personal data from any other devices. I generally use LTE or hotsopt from my phone service provider than logging-in through public wifi. 
+
+All the devices at my home were all connected with one single email. I stopped info sharing between devices, turned off bluetooth, Airdrop options. Accepted 2 factor authentication to my emails and my mobile apps.
