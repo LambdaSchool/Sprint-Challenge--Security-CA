@@ -39,9 +39,13 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    let neighborCount = lifeState[x - 1] + lifeState[x] + lifeState[x + 1];
+    if (x > 0 && x < lifeState.length - 1) {
+      return neighborCount === 2 ? 1 : 0;
+    }
+    else {
+      return 0;
+    }
   }
 
   /**
