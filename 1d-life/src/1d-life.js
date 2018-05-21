@@ -40,8 +40,12 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    if(lifeState[x-1] < lifeState.length && lifeState[x+1] < lifeState.length ) {
+      if(lifeState[x-1] === lifeState[x] && lifeState[x] === lifeState [x+1]) return 0;
+    } else {
+      if(lifeState[x] === lifeState.length || lifeState[x] === lifeState[0]) return 0;
+      else return 1;
+    } return 1;
   }
 
   /**
@@ -73,9 +77,10 @@
       for (let x = 0; x < canvas.width; x++) {
 
         // Compute the new value
+        
         let newVal = getNewVal(curState, x);
         backState[x] = newVal;
-
+        //console.log("newVal :",newVal);
         index = (generation * canvas.width + x) * 4;
 
         color = newVal == 0? 0: 0xff;
