@@ -39,9 +39,12 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    const leftNeighbor = (x < 1) ? 0 : lifeState[(x - 1)];
+    const rightNeighbor = (x >= lifeState.length - 1) ? 0 : lifeState[(x + 1)];
+    const xValue = lifeState[x];
+    const numCellsAlive = leftNeighbor + rightNeighbor + xValue;
 
-    return 0; // instead of this
+    return (numCellsAlive === 0 || numCellsAlive === 3) ? 0 : 1;
   }
 
   /**
@@ -67,7 +70,7 @@
     curState[canvas.width >> 1] = 1; // >>1 is an integer div 2
 
     // Go through all our generations
-    for (let generation = 0; generation < canvas.height; generation++) {
+    for (let generation = 0; generation < canvas.height / 2; generation++) {
 
       // Go through all the pixels
       for (let x = 0; x < canvas.width; x++) {
@@ -93,6 +96,47 @@
       backState = lifeState[backStateIdx];
     }
 
+    // Get our double buffer life states for reverse
+    const lifeStateReverse = [
+      new Array(canvas.width).fill(0),
+      new Array(canvas.width).fill(0),
+    ];
+
+    ctx.putImageData(imageData, 0, 0);
+
+    curStateIdx = 0, backStateIdx = 1;
+    curState = lifeStateReverse[curStateIdx];
+    backState = lifeStateReverse[backStateIdx];
+
+    curState[canvas.width >> 1] = 1; // >>1 is an integer div 2
+
+    // Go through all our generations
+    for (let generation = canvas.height; generation > canvas.height / 2 - 1; generation--) {
+
+      // Go through all the pixels
+      for (let x = 0; x < canvas.width; x++) {
+
+        // Compute the new value
+        let newVal = getNewVal(curState, x);
+        backState[x] = newVal;
+
+        index = (generation * canvas.width + x) * 4;
+
+        color = newVal == 0? 0: 0xff;
+
+        imageData.data[index+0] = color;
+        imageData.data[index+1] = color;
+        imageData.data[index+2] = color;
+        imageData.data[index+3] = 0xff;
+
+      }
+
+      curStateIdx = curStateIdx == 0? 1: 0;
+      backStateIdx = curStateIdx == 0? 1: 0;
+      curState = lifeStateReverse[curStateIdx];
+      backState = lifeStateReverse[backStateIdx];
+    }
+
     ctx.putImageData(imageData, 0, 0);
   }
 
@@ -102,9 +146,6 @@
   function onLoad() {
     drawLife();
   }
-  
-  // Main
 
 	window.addEventListener('load', onLoad);
-
 }());
