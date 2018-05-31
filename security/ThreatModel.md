@@ -1,0 +1,9 @@
+To whom it may concern (this is all of you :)),
+
+As we all know, our site has been seeing increased traffic as of late and we have been featured in many tech blogs and magazines. This is fantastic and I wanted to congratulate everyone on the amazing work that has been done so far. However, increased attention can mean attention from the wrong kind of people and I wanted to highlight some areas of risk as well as give some possible solutions.
+
+First and foremost, everyone recieves those "phishy" emails from time to time however I anticipate that the frequency may increase from here on out. Please be careful when opening any emails from suspicious senders and report any scams to the IT department immediately. Malware could infect your system and be uploaded to the server that could be devastating to both our codebase and our customers. Be increasingly aware of these types of attacks to ensure we dont have any breach.
+
+Another area of concern would be logging into the server from public internet cafes or public wifi hotspots. Please only log in from your personal network at home or the one here at work. This will help to limit the number of prying eyes that can see our information as it gets sent across the web. Passwords can be obtained or other sensitive information that we do not want distributed. As an aside, everyone needs to change their passwords to all email/bank/important accounts and be sure to change them frequently over the coming months. I also recommend some type of password manager to help create strong passwords that are difficult to break.
+
+If you have any questions or further suggestions please feel free to send me an email or set up a meeting. Thanks in advance and happy coding.
