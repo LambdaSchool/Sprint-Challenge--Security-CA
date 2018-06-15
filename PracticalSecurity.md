@@ -1,0 +1,3 @@
+# Practical Security Measures
+
+I have appiled two factor authentication the my google accounts. Now I need a passphrase and a secret code sent to my phone to be able to log in. This greatly increases my personal security becuase my google accounts are a vector to all my other accounts. I also already have a system by which all my accounts have a different passphrase that is easy for me to remember without relying on available personal information.
