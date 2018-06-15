@@ -1,0 +1,3 @@
+# Practical Security.
+
+- For this exercise I downloaded Universal Password Manager, and as I went through adding my passwords, I made variations of symbols, numbers, capitalizations, and spellings. I've also reset up my VPN account with TorGuard. I already use Linux, and two factor authentication on all accounts where possible. I read into some of the other categories such as SSH and GPG, but I will utilize them at a later when I have time to make sure I set them up thoroughly.
