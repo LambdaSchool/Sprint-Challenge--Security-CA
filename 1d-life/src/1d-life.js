@@ -40,22 +40,22 @@
     function getNewVal(lifeState, x) {
         // !!! IMPLEMENT ME
         // first attempt
-        if (x - 1 < 0 || x + 1 > lifeState.length - 1) return 0;
-        const current = lifeState[x];
-        const prev = lifeState[x - 1];
-        const next = lifeState[x + 1];
-        const sum = current + prev + next;
-        if (sum > 0 && sum < 3) return 1;
+        // if (x - 1 < 0 || x + 1 > lifeState.length - 1) return 0;
+        // const current = lifeState[x];
+        // const prev = lifeState[x - 1];
+        // const next = lifeState[x + 1];
+        // const sum = current + prev + next;
+        // if (sum > 0 && sum < 3) return 1;
 
-        return 0;
+        // return 0;
 
         // refactored into
-        // const current = lifeState[x];
-        // const prev = x - 1 > 0 ? lifeState[x - 1] : 0;
-        // const next = x + 1 < lifeState.length - 1 ? lifeState[x + 1] : 0;
-        // const sum = current + prev + next;
+        const current = lifeState[x];
+        const prev = x - 1 > 0 ? lifeState[x - 1] : 0;
+        const next = x + 1 < lifeState.length - 1 ? lifeState[x + 1] : 0;
+        const sum = current + prev + next;
 
-        // return sum > 0 && sum < 3 ? 1 : 0;
+        return sum > 0 && sum < 3 ? 1 : 0;
     }
 
     /**
