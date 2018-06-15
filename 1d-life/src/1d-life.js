@@ -41,9 +41,10 @@
   function getNewVal(lifeState, x) {
     //   Careful: if x is < 1 then lifeState[x-1] is out of range! if x
     //  *   is >= lifeState.length - 1, lifeState[x+1] is out of range!
-    if (x < 1 || x >= lifeState.length - 1 || lifeState[x] === lifeState[x + 1] || lifeState[x] === lifeState[x - 1]) {
+    if (x < 1 || x >= lifeState.length - 1 || ((lifeState[x] === lifeState[x + 1]) && lifeState[x] === lifeState[x - 1])) {
       return 0;
     }
+
     return 1;
   }
 
@@ -76,12 +77,12 @@
       for (let x = 0; x < canvas.width; x++) {
 
         // Compute the new value
-        let newVal = getNewVal(curState, x);
+        newVal = getNewVal(curState, x);
         backState[x] = newVal;
 
         let index = (generation * canvas.width + x) * 4;
 
-        let color = newVal === 0 ? 0 : 0xff;
+        color = newVal == 0 ? 0 : 0xff;
 
         imageData.data[index + 0] = color;
         imageData.data[index + 1] = color;
@@ -90,8 +91,8 @@
 
       }
 
-      curStateIdx = curStateIdx === 0 ? 1 : 0;
-      backStateIdx = curStateIdx === 0 ? 1 : 0;
+      curStateIdx = curStateIdx == 0 ? 1 : 0;
+      backStateIdx = curStateIdx == 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
