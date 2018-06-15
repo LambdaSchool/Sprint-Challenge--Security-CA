@@ -41,7 +41,41 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+    // return 0; // instead of this
+    if(lifeState[x - 1] === undefined || lifeState[x + 1] === undefined){
+      return 0;
+    }
+
+    if(lifeState[x - 1] === 1 && lifeState[x] === 1 && lifeState[x + 1] === 1){
+      return 0;
+    }
+    
+    if(lifeState[x - 1] === 0 && lifeState[x] === 0 && lifeState[x + 1] === 0){
+      return 0;
+    }
+    if(lifeState[x - 1] === 1 && lifeState[x] === 1 && lifeState[x + 1] === 0){
+      return 1;
+    }
+    if(lifeState[x - 1] === 1 && lifeState[x] === 0 && lifeState[x + 1] === 1){
+      return 1;
+    }
+    if(lifeState[x - 1] === 0 && lifeState[x] === 1 && lifeState[x + 1] === 1){
+      return 1;
+    }
+    if(lifeState[x - 1] === 1 && lifeState[x] === 0 && lifeState[x + 1] === 0){
+      return 1;
+    }
+    if(lifeState[x - 1] === 0 && lifeState[x] === 1 && lifeState[x + 1] === 0){
+      return 1;
+    }
+    if(lifeState[x - 1] === 0 && lifeState[x] === 0 && lifeState[x + 1] === 1){
+      return 1;
+    }
+    else{
+      return 0;
+    }
+    
+
   }
 
   /**
@@ -80,15 +114,15 @@
 
         color = newVal == 0? 0: 0xff;
 
-        imageData.data[index+0] = color;
-        imageData.data[index+1] = color;
-        imageData.data[index+2] = color;
-        imageData.data[index+3] = 0xff;
+        imageData.data[index + 0] = color;
+        imageData.data[index + 1] = color;
+        imageData.data[index + 2] = color;
+        imageData.data[index + 3] = 0xff;
 
       }
 
-      curStateIdx = curStateIdx == 0? 1: 0;
-      backStateIdx = curStateIdx == 0? 1: 0;
+      curStateIdx = curStateIdx == 0 ? 1 : 0;
+      backStateIdx = curStateIdx == 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
