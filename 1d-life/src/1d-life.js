@@ -39,16 +39,19 @@
    */
   function getNewVal(lifeState, x) {
     let left = x - 1;
-    let current = x;
     let right = x + 1;
+    // console.log('lifeState: ', lifeState[x]);
+    //console.log('x - 1: ', left);
 
-    for (let i = 0; i < lifeState.length; i++) {
-      if ((left === 0 && right === 0) || (left === 1 && right === 1)) {
-        return 0;
-      } else {
-        return 1;
-      }
+    if (x < 1 || x >= lifeState.length) {
+      console.log('out of range');
     }
+
+    if ((left === x && right === x) || (left != x && right != x)) {
+      return 0;
+    }
+
+    return 1;
   }
 
   /**
