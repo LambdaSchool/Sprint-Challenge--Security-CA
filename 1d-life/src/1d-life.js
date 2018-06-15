@@ -40,9 +40,16 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
-  }
+if (x == 000){
+  return 0;
+}
+else if (x == 100){
+  return 1;
+}
+else
+return 0; // instead of this
+}
+  
 
   /**
    * Draw life
