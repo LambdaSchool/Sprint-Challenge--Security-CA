@@ -41,9 +41,10 @@
   function getNewVal(lifeState, x) {
     let left, right, current;
     current = lifeState[x];
-    if (x < 1) left = 0; else left = lifeState[x-1];
-    if (x >= lifeState.length - 1) right = 0; else right = lifeState[x+1];
-    if (left === right && left === current) return 0; else return 1;
+    left = lifeState[x-1] | 0;
+    right = lifeState[x+1] | 0;
+    if (left === right && right === current) return 0;
+    else return 1;
   }
 
   /**
