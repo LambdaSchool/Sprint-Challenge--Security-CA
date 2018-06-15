@@ -1,0 +1,2 @@
+
+I got a 1Password family plan, and it's been great so far. It comes out to $1/person/month. I have two-factor authentication set up for my email, bank account and credit card accounts. And just today I connected to Github using SSH. I also use a VPN on my phone
