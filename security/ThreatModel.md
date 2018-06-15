@@ -1,4 +1,4 @@
-0## To my dear friend,
+## To my dear friend,
 
 As you know, we live in a world where more and more of our lives are being transposed into the digital space, and with every passing byte, we become more suseptible to becoming the victims of cyber attacks. Because of this, it is imperative that we be weary of where and how we leave our digital footprints.
 
