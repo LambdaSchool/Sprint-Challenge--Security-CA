@@ -39,9 +39,10 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    const left = (x < 1) ? 0 : lifeState[x-1];
+    const right = (x >= lifeState.length - 1) ? 0 : lifeState[x+1];
+    if (!left & !right & !lifeState[x] || left & right & lifeState[x]) return 0;
+    return 1;
   }
 
   /**
