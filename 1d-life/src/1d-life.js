@@ -1,5 +1,4 @@
 (function () {
-
   /**
    * For a given x coordinate, look at the surrounding values in
    * lifeState and figure out the new value.
@@ -40,15 +39,17 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    let alive=lifeState[x];
+    if(x>0) alive += lifeState[x-1];
+    if(x<lifeState.length-1) alive+=[x+1];
+     // instead of this
+    return 0 !==alive && alive!==3; 
   }
 
   /**
    * Draw life
    */
   function drawLife() {
-
     // Get canvas info
     const canvas = document.querySelector('#life');
     const ctx = canvas.getContext('2d');
