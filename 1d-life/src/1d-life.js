@@ -40,8 +40,13 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    let left = lifeState[x - 1];
+    let right = lifeState[x + 1];
+    let current = lifeState[x];
 
-    return 0; // instead of this
+    let initialize = (left && current && right) || (!left && !current && !right);
+
+    return !initialize ? 1 : 0;  // instead of this
   }
 
   /**
