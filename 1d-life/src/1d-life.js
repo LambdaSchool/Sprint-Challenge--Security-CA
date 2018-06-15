@@ -37,17 +37,21 @@
    *
    * @param {*} x the current x coordinate in question
    */
+
   function getNewVal(lifeState, x) {
     let left = x - 1;
     let right = x + 1;
     // console.log('lifeState: ', lifeState[x]);
     //console.log('x - 1: ', left);
 
-    if (x < 1 || x >= lifeState.length) {
-      console.log('out of range');
+    // if (x < 1 || x >= lifeState.length) {
+    //   return 0;
+    // }
+    if (lifeState[left] === undefined || lifeState[right] === undefined) {
+      return 0;
     }
 
-    if ((left === x && right === x) || (left != x && right != x)) {
+    if (lifeState[left] === lifeState[x] && lifeState[right] === lifeState[x]) {
       return 0;
     }
 
