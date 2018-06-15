@@ -40,8 +40,19 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    // note: x-1 (left), x (current), and x+1 (right)
+    // console.log(lifeState[x-1], lifeState[x], lifeState[x+1]);
 
-    return 0; // instead of this
+      if (lifeState[x-1] === undefined || lifeState[x+1] === undefined) {
+        return 0;
+      }
+      if (lifeState[x-1] === 1 && lifeState[x] === 1 && lifeState[x+1] === 1) {
+        return 0;
+      }
+      if (lifeState[x-1] === 0 && lifeState[x] === 0 && lifeState[x+1] === 0) {
+        return 0;
+      }
+      return 1;
   }
 
   /**
@@ -71,6 +82,7 @@
 
       // Go through all the pixels
       for (let x = 0; x < canvas.width; x++) {
+      // for (let x = 0; x < 20; x++) { // for testing console logs without running through the entire canvas
 
         // Compute the new value
         let newVal = getNewVal(curState, x);
