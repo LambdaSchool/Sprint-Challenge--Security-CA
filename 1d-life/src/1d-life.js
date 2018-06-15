@@ -39,13 +39,22 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-    let val = 0;
+    let livingCells = 0;
 
-    //1. Everything has dots or zeros across the width of this lifestate
-    //2. *Logic to handle surroundings to either return a 0 or 1
-    //3. Return single value or array???
+    if (x < 2) {
+      if (lifeState[x + 2] || lifeState[x]) return 1;
+    }
 
-    return val; // instead of this
+    if (x >= lifeState.length - 2) {
+      if (lifeState[x - 2] || lifeState[x]) return 1;
+    }
+
+    if (x > 2 || x <= lifeState.length - 2) {
+      if (lifeState[x] && lifeState[x - 2] && lifeState[x + 2]) return 0;
+      if (lifeState[x] || lifeState[x - 2] || lifeState[x + 2]) return 1;
+    }
+
+    return 0;
   }
 
   /**
@@ -76,22 +85,22 @@
       // Go through all the pixels
       for (let x = 0; x < canvas.width; x++) {
         // Compute the new value
-        let newVal = getNewVal(curState, x);
+        let newVal = getNewVal(curState, x); // newVal should get a 1 or a 0
         backState[x] = newVal;
 
-        index = (generation * canvas.width + x) * 4; // why the multiply and add then multiply of 4???
+        index = (generation * canvas.width + x) * 4; // why multiply and add then multiply by 4???
 
-        color = newVal == 0 ? 0 : 0xff; // if it's zero it's white
+        color = newVal == 0 ? 0x0 : 0xff; // if it's zero it's black, else red
 
         imageData.data[index + 0] = color;
-        imageData.data[index + 1] = color;
-        imageData.data[index + 2] = color;
+        imageData.data[index + 1] = 0x0;
+        imageData.data[index + 2] = 0x0;
         imageData.data[index + 3] = 0xff;
       }
 
       curStateIdx = curStateIdx == 0 ? 1 : 0; // This conditional ops ocscillates.
       backStateIdx = curStateIdx == 0 ? 1 : 0; // curStateIdx is 1 in ops.. 0 now
-      curState = lifeState[curStateIdx]; // I am oscillating between lifeState arr's
+      curState = lifeState[curStateIdx]; // I am oscillating between lifeState arr
       backState = lifeState[backStateIdx];
     }
 
