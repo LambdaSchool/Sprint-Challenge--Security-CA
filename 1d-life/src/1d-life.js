@@ -40,23 +40,13 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
- 	 
-        if (x < 1) {
-          if (!lifeState[x + 1] && !lifeState[x]) return 0;
-          if (lifeState[x + 1] || lifeState[x]) return 1;
-        }
-    
-        if (x >= lifeState.length - 1) {
-          if (!lifeState[x - 1] && !lifeState[x]) return 0;
-          if (lifeState[x - 1] || lifeState[x]) return 1;
-        }
-    
-        if (x > 1 || x <= lifeState.length - 1) {
-          if (lifeState[x] && lifeState[x - 1] && lifeState[x + 1]) return 0;
-          if (lifeState[x] || lifeState[x - 1] || lifeState[x + 1]) return 1;
-        }
+        let left = lifeState[x-1];
+        let right = lifeState[x+1];
 
-      return 0;
+        if (x < 1 || x>= lifeState.length-1) return 0;
+
+        if (lifeState[x] === left && lifeState[x] === right) return 0;
+    
   }
 
   /**

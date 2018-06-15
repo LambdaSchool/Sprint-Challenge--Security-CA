@@ -1,1 +1,1 @@
-A college student. Exposed to tech through social media apps, banking apps, college websites. Can easily be exposed to identity theft and hacking of student accounts.
+A college student. Exposed to tech through social media apps, banking apps, college websites. Can easily be vulnerable to identity theft and hacking of student accounts.
