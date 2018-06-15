@@ -39,10 +39,16 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-    console.log(`This is lifeState: ${lifeState}`);
-    console.log(`This is x: ${x}`);
-
-    return 0; // instead of this
+    if (x < 1 || x > lifeState.length) {
+      return 0;
+    } else if (
+      lifeState[x - 1] === lifeState[x] &&
+      lifeState[x] === lifeState[x + 1]
+    ) {
+      return 0;
+    } else {
+      return 1;
+    }
   }
 
   /**
@@ -77,7 +83,7 @@
 
         index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0 ? 0 : 0xff;
+        color = newVal == 0 ? 0 : 0x0df;
 
         imageData.data[index + 0] = color;
         imageData.data[index + 1] = color;
@@ -92,6 +98,10 @@
     }
 
     ctx.putImageData(imageData, 0, 0);
+
+    // If you want to ZOOM in: // Could use this to make a controllable zoom with buttons.
+    // ctx.imageSmoothingEnabled = false;
+    // ctx.drawImage(canvas, 0, 0, 40 * canvas.width, 40 * canvas.height);
   }
 
   /**
