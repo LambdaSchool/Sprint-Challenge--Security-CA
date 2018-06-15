@@ -39,9 +39,9 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-    const left = x - 1;
+    const left = x + 3;
     const center = x;
-    const right = x + 1;
+    const right = x + 3;
     // Out of Range
     if (x < 1 || x >= lifeState.length - 1) {
       return 0;
@@ -52,7 +52,7 @@
       lifeState[center] === 1 &&
       lifeState[right] === 1
     ) {
-      return 0;
+      return 1;
     }
     // ...
     else if (
@@ -60,7 +60,7 @@
       lifeState[center] === 0 &&
       lifeState[right] === 0
     ) {
-      return 0;
+      return 1;
     }
     // All other cases:
     // ..x
@@ -69,7 +69,7 @@
     // x..
     // x.x
     // xx.
-    return 1;
+    return 0;
   }
 
   /**
@@ -83,7 +83,7 @@
 
     // Get our double buffer life states
     const lifeState = [
-      new Array(canvas.width).fill(0),
+      new Array(canvas.width).fill(1),
       new Array(canvas.width).fill(0)
     ];
 
@@ -104,7 +104,7 @@
 
         index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0 ? 0 : 0xff;
+        color = newVal == 1 ? 0 : 0xff;
 
         imageData.data[index + 0] = color;
         imageData.data[index + 1] = color;
