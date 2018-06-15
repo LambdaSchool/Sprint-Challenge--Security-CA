@@ -1,5 +1,5 @@
 (function () {
-  
+
 
   /**
    * For a given x coordinate, look at the surrounding values in
@@ -41,8 +41,18 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    let east = lifeState[x + 1];
+    let west = lifeState[x - 1];
 
-    return 0; // instead of this
+    if (x > 0 || x <= lifeState.length -1) {
+      if (lifeState[x - 1] === west && lifeState[x - 1] === east) {
+        return 0;
+      } else {
+        if (lifeState[x -1] || lifeState[x] || lifeState[x + 1]) {
+          return 1;
+        }
+      }
+    }
   }
 
   /**
