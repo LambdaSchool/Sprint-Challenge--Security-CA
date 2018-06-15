@@ -1,0 +1,1 @@
+I have two-factor authentication enabled on most of my accounts. This exercise reminded me to change my Twitter password in light of the recent news that they had their security compromised. I was previously just using the inbuilt browser password managers but I am now using LastPass for them instead and i'll go to set up a SSH keypair that I didn't know about 
