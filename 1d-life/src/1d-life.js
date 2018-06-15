@@ -40,12 +40,21 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    const left = x - 1 < 0 ? 0 : x - 1;
-    const right = x + 1 > lifeState.length - 1 ? 0 : x + 1;
+    // const left = x - 1 < 0 ? 0 : x - 1;
+    // const right = x + 1 > lifeState.length - 1 ? 0 : x + 1;
+
+    // return !(
+    //   (!lifeState[left] && !lifeState[x] && !lifeState[right]) ||
+    //   (lifeState[left] && lifeState[x] && lifeState[right])
+    // );
 
     return !(
-      (!lifeState[left] && !lifeState[x] && !lifeState[right]) ||
-      (lifeState[left] && lifeState[x] && lifeState[right])
+      (!lifeState[x - 1 < 0 ? 0 : x - 1] &&
+        !lifeState[x] &&
+        !lifeState[x + 1 > lifeState.length - 1 ? 0 : x + 1]) ||
+      (lifeState[x - 1 < 0 ? 0 : x - 1] &&
+        lifeState[x] &&
+        lifeState[x + 1 > lifeState.length - 1 ? 0 : x + 1])
     );
   }
 
