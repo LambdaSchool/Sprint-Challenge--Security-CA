@@ -1,0 +1,3 @@
+## Security Response
++ I've been procrastinating in getting a password manager but finally came to it! With this, I have changed several of my passwords to avoid the 'one password to rule them all'. Before the password manager, most of my passwords were very simple and similar. This is because I don't have great memory and tend to forget what I typed and am lazy in creating a new one. But luckily, KeePass will let me not worry about that.
++ After this week, I have been more keen about Two Factor Auth. Security was something that I did not think much about til these lectures.
