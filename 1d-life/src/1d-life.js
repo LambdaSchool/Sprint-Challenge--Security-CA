@@ -40,6 +40,7 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+  
     
   if (lifeState[x] < 1 || lifeState[x-1] >= x ){
     return 0;
