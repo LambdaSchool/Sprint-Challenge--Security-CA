@@ -43,6 +43,8 @@
     const b = lifeState[x];
     const c = lifeState[x + 1];
 
+    // F(a, b, c) = (a and !c) or (!b and c) or (!a and b)
+    // - Derived and simplified from truth table and Karnaugh map
     return (a && !c) || (!b && c) || (!a && b);
   }
 
