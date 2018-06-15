@@ -39,6 +39,9 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    const left = x - 1;
+    const center = x;
+    const right = x + 1;
 
     // Out of Range
     if (x < 1 || x >= lifeState.length - 1) {
@@ -46,17 +49,17 @@
     }
     // xxx
     if (
-      lifeState[x - 1] === 1 &&
-      lifeState[x] === 1 &&
-      lifeState[x + 1] === 1
+      lifeState[left] === 1 &&
+      lifeState[center] === 1 &&
+      lifeState[right] === 1
     ) {
       return 0;
     }
     // ...
     else if (
-      lifeState[x - 1] === 0 &&
-      lifeState[x] === 0 &&
-      lifeState[x + 1] === 0
+      lifeState[left] === 0 &&
+      lifeState[center] === 0 &&
+      lifeState[right] === 0
     ) {
       return 0;
     }
