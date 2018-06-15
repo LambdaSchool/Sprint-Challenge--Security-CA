@@ -39,16 +39,14 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-    let rv = 0;
 
     const left = x - 1 < 0 ? 0 : x - 1;
     const right = x + 1 > lifeState.length - 1 ? 0 : x + 1;
 
-    const dead =
+    return !(
       (!lifeState[left] && !lifeState[x] && !lifeState[right]) ||
-      (lifeState[left] && lifeState[x] && lifeState[right]);
-
-    return dead ? 0 : 1; // instead of this
+      (lifeState[left] && lifeState[x] && lifeState[right])
+    );
   }
 
   /**
