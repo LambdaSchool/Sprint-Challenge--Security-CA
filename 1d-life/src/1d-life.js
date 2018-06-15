@@ -41,7 +41,10 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+    const left = (x < 1) ? 0 : lifeState[x - 1];
+    const right = (x >= lifeState.length - 1) ? 0 : lifeState[x + 1];
+    if (!left & !right & !lifeState[x] || left & right & lifeState[x]) return 0;
+    return 1;
   }
 
   /**
@@ -60,7 +63,8 @@
       new Array(canvas.width).fill(0),
     ];
 
-    let curStateIdx = 0, backStateIdx = 1;
+    let curStateIdx = 0, 
+    backStateIdx = 1;
     let curState = lifeState[curStateIdx];
     let backState = lifeState[backStateIdx];
 
@@ -78,17 +82,17 @@
 
         index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0? 0: 0xff;
+        color = newVal == 0 ? 0 : 0xff;
 
-        imageData.data[index+0] = color;
-        imageData.data[index+1] = color;
-        imageData.data[index+2] = color;
-        imageData.data[index+3] = 0xff;
+        imageData.data[index + 0] = color;
+        imageData.data[index + 1] = color;
+        imageData.data[index + 2] = color;
+        imageData.data[index + 3] = 0xff;
 
       }
 
-      curStateIdx = curStateIdx == 0? 1: 0;
-      backStateIdx = curStateIdx == 0? 1: 0;
+      curStateIdx = curStateIdx == 0 ? 1 : 0;
+      backStateIdx = curStateIdx == 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
@@ -102,9 +106,9 @@
   function onLoad() {
     drawLife();
   }
-  
+
   // Main
 
-	window.addEventListener('load', onLoad);
+  window.addEventListener('load', onLoad);
 
 }());
