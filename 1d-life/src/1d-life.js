@@ -42,7 +42,6 @@
     // !!! IMPLEMENT ME
     // note: x-1 (left), x (current), and x+1 (right)
     // console.log(lifeState[x-1], lifeState[x], lifeState[x+1]);
-
       if (lifeState[x-1] === undefined || lifeState[x+1] === undefined) {
         return 0;
       }
