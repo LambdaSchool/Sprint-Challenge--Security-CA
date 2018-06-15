@@ -40,8 +40,13 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    if (lifeState[x] + lifeState[x+1] === 0 && x === 0)
+      return 0;
+    if (lifeState[x] + lifeState[x-1] === 0 && x === lifeState.length - 1)
+      return 0;
+    if (lifeState[x] + lifeState[x-1] + lifeState[x+1] === 0 || lifeState[x] + lifeState[x-1] + lifeState[x+1] === 3)
+      return 0;
+    return 1;
   }
 
   /**
@@ -63,9 +68,10 @@
     let curStateIdx = 0, backStateIdx = 1;
     let curState = lifeState[curStateIdx];
     let backState = lifeState[backStateIdx];
+    //console.log(curState);
 
     curState[canvas.width >> 1] = 1; // >>1 is an integer div 2
-
+    //console.log(curState);
     // Go through all our generations
     for (let generation = 0; generation < canvas.height; generation++) {
 
