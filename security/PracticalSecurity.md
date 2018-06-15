@@ -1,0 +1,3 @@
+I have always been very causious and very aware when it comes to security/passwords
+because of this I currently use 2 factor authentication anytime it is provided, and use
+Authy anytime it is not provided on an important account. I also use KeePass for any social media accounts. For any major account that would be dire if someone hacked it such as Bank Account information on top of the 2 factor authentication I also recieve SMS updates and email updates when the account is logged into or there is any activity in the account. I am also always looking into ways to better secure my passwords and accounts.
