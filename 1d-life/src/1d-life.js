@@ -39,10 +39,29 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    // Check if the cell on either side is out of bounds and handle it
+    if (x < 1 || x >= lifeState.length - 1) {
+      if ((x < 1) && (lifeState[x] === 1 || lifeState[x + 1] === 1)) return 1;
+      // return ((x >= lifeState.length - 1) && (lifeState[x] === 1 || lifeState[x - 1] === 1)) ? 1 : 0;  // this could replace following 2 lines
+      else if ((x >= lifeState.length - 1) && (lifeState[x] === 1 || lifeState[x - 1] === 1)) return 1;
+      else return 0;
+    }
 
-    return 0; // instead of this
+    // Return zero if all three cells are the same, else return 1
+    return ((lifeState[x - 1] === lifeState[x]) && (lifeState[x + 1] === lifeState[x])) ? 0 : 1;
   }
+
+  // Saving for demo purposes, ignore this
+  // function getNewVal(lifeState, x) {
+  //   // Check if the cell on either side is out of bounds and handle it
+  //   if (x < 1 || x >= lifeState.length - 1) {
+  //     // if tests written incorrectly
+  //     // else return 0;
+  //   }
+
+  //   // Return zero if all three cells are the same, else return 1
+  //   return ((lifeState[x - 1] === lifeState[x]) && (lifeState[x + 1] === lifeState[x])) ? 0 : 1;
+  // }
 
   /**
    * Draw life
