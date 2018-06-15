@@ -40,6 +40,11 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    const one = lifeState[x -1] ? lifeState[x - 1] : 0;
+    const two = lifeState[x];
+    const three = lifeState[x + 1] ? lifeState[x + 1] : 0;
+    const binary = parseInt(one.toString() + two.toString() + three.toString(), 2);
+    return (binary === 0) | (binary === 7) ? 0 : 1;
 
     return 0; // instead of this
   }
