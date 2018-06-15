@@ -40,19 +40,19 @@
    */
   function getNewVal(lifeState, x) {
     
-    // const currentVal = lifeState[x];
-    // let left = leftState[x-1];
-    // let right = leftState[x+1];
+    const currentVal = lifeState[x];
+    let left = leftState[x-1];
+    let right = leftState[x+1];
 
-    // if (x < 1 || x >= lifeState.length - 1); {
-    //   return 0; 
-    // }
+    if (x < 1 || x >= lifeState.length - 1); {
+      return 0; 
+    }
 
-    // if (currentVal === left && currentVal === right) {
-    //   return 0;
-    // } else {
-    //   return 1;
-    // }
+    if (currentVal === left && currentVal === right) {
+      return 0;
+    } else {
+      return 1;
+    }
   }
 
     
