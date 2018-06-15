@@ -1,0 +1,3 @@
+So to start, I set up 2 factor authentication for a few of my most used apps and programs, then I set up a password manager through Apple's macOS. This program doesn't show me the passwords directly, and saves them. This way my passwords are completely random, and my personal preferences and background cannot be used to guess them. I'm not sure if I can see the passwords at all, but I haven't tried to find them.
+
+Hopefully this will also help with keeping multiple access points to my info online secure, specifically because you can't get into my e-mail easily. Speaking of E-mail, I have a couple e-mails so that accessing one e-mail doesn't allow access to resetting all my other passwords.
