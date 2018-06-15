@@ -39,10 +39,23 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    
+    // const currentVal = lifeState[x];
+    // let left = leftState[x-1];
+    // let right = leftState[x+1];
 
-    return 0; // instead of this
+    // if (x < 1 || x >= lifeState.length - 1); {
+    //   return 0; 
+    // }
+
+    // if (currentVal === left && currentVal === right) {
+    //   return 0;
+    // } else {
+    //   return 1;
+    // }
   }
+
+    
 
   /**
    * Draw life
