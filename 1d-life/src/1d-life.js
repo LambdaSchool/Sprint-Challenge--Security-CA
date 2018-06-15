@@ -44,7 +44,7 @@
     if (x < 1 || x >= lifeState.length - 1 || lifeState[x] === lifeState[x + 1] || lifeState[x] === lifeState[x - 1]) {
       return 0;
     }
-    return 1; // instead of this
+    return 1;
   }
 
   /**
@@ -79,9 +79,9 @@
         let newVal = getNewVal(curState, x);
         backState[x] = newVal;
 
-        index = (generation * canvas.width + x) * 4;
+        let index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0 ? 0 : 0xff;
+        let color = newVal === 0 ? 0 : 0xff;
 
         imageData.data[index + 0] = color;
         imageData.data[index + 1] = color;
@@ -90,8 +90,8 @@
 
       }
 
-      curStateIdx = curStateIdx == 0 ? 1 : 0;
-      backStateIdx = curStateIdx == 0 ? 1 : 0;
+      curStateIdx = curStateIdx === 0 ? 1 : 0;
+      backStateIdx = curStateIdx === 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
@@ -107,7 +107,6 @@
   }
 
   // Main
-
   window.addEventListener('load', onLoad);
 
 }());
