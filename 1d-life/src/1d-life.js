@@ -40,7 +40,13 @@
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
 
-    // bitwise XOR and OR
+    // bitwise OR and XOR
+    // x  y  (x or y)  (x xor y)
+    // 0  0    0          0
+    // 1  0    1          1
+    // 0  1    1          1
+    // 1  1    1          0
+
     return (lifeState[x] ^ lifeState[x - 1]) | (lifeState[x] ^ lifeState[x + 1]);
 
     // not quite. image slightly different, inverted colors.
