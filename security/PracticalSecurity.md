@@ -1,0 +1,1 @@
+To improve security I have ubuntu installed in a virtual box. Also I previously use to use the same password for a lot of accounts and am now implementing encryption using a password manager. Connecting to GitHub with SSH key.
