@@ -38,10 +38,33 @@
    * 
    * @param {*} x the current x coordinate in question
    */
-  function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
 
-    return 0; // instead of this
+  //                                            ▄              ▄    
+  //                                           ▌▒█           ▄▀▒▌   
+  // wow                                       ▌▒▒█        ▄▀▒▒▒▐   
+  //                                          ▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐   
+  //                                        ▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐   
+  //     such code                         ▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌    
+  //                                     ▐▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒▌  
+  //                                     ▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐  
+  //                                    ▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌ 
+  //                                    ▌░▒▄██▄▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌ 
+  //               very js             ▀▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒▐ 
+  //                                   ▐▒▒▐▀▐▀▒░▄▄▒▄▒▒▒▒▒▒░▒░▒░▒▒▒▒▌
+  //                                   ▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒▒▒░▒░▒░▒▒▐ 
+  //     much canvas                    ▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒░▒░▒░▒░▒▒▒▌ 
+  //                                    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▄▒▒▐  
+  //                                     ▀▄▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▄▒▒▒▒▌  
+  //                   so #life            ▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀   
+  //                                          ▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀     
+  //                                           ░▒▒▒▒▒▒▒▒▒▒▀▀        
+
+  function getNewVal(lifeState, x) {
+    let current = lifeState[x];
+    let left = lifeState[x - 1] | 0;
+    let right = lifeState[x + 1] | 0;
+
+    return left === right && right === current ? 0 : 1;
   }
 
   /**
@@ -76,19 +99,19 @@
         let newVal = getNewVal(curState, x);
         backState[x] = newVal;
 
-        index = (generation * canvas.width + x) * 4;
+        let index = (generation * canvas.width + x) * 4;
 
-        color = newVal == 0? 0: 0xff;
+        let color = newVal === 0 ? 0 : 0xff;
 
-        imageData.data[index+0] = color;
-        imageData.data[index+1] = color;
-        imageData.data[index+2] = color;
-        imageData.data[index+3] = 0xff;
+        imageData.data[index + 0] = color;
+        imageData.data[index + 1] = color;
+        imageData.data[index + 2] = color;
+        imageData.data[index + 3] = 0xff;
 
       }
 
-      curStateIdx = curStateIdx == 0? 1: 0;
-      backStateIdx = curStateIdx == 0? 1: 0;
+      curStateIdx = curStateIdx === 0 ? 1 : 0;
+      backStateIdx = curStateIdx === 0 ? 1 : 0;
       curState = lifeState[curStateIdx];
       backState = lifeState[backStateIdx];
     }
@@ -102,9 +125,9 @@
   function onLoad() {
     drawLife();
   }
-  
+
   // Main
 
-	window.addEventListener('load', onLoad);
+  window.addEventListener('load', onLoad);
 
 }());
