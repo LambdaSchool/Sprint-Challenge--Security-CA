@@ -1,0 +1,14 @@
+{
+  "name": "1d-life",
+  "version": "1.0.0",
+  "description": "This is an implementation of Wolfram's [Rule\r 126](http://mathworld.wolfram.com/Rule126.html).",
+  "main": "1d-life.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    
+  },
+  "author": "",
+  "license": "ISC"
+}
