@@ -19,14 +19,14 @@
    *   are on or off in a particular pattern.
    * 
    *   Surrounding    New   Return
-   *       ...         .      0
-   *       ..x         x      1
-   *       .x.         x      1
-   *       .xx         x      1
-   *       x..         x      1
-   *       x.x         x      1
-   *       xx.         x      1
-   *       xxx         .      0
+   *       ...         .      0     000
+   *       ..x         x      1     001
+   *       .x.         x      1     010
+   *       .xx         x      1     011
+   *       x..         x      1     100
+   *       x.x         x      1     101
+   *       xx.         x      1     110
+   *       xxx         .      0     111
    * 
    * Optimal solution is 5 lines of code, but you can use more if you
    * want to. :)
@@ -40,8 +40,13 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+    if (lifeState[x] + lifeState[x+1] === 0 && x === 0)
+      return 0;
+    if (lifeState[x] + lifeState[x-1] === 0 && x === lifeState.length - 1)
+      return 0;
+    if (lifeState[x] + lifeState[x-1] + lifeState[x+1] === 0 || lifeState[x] + lifeState[x-1] + lifeState[x+1] === 3)
+      return 0;
+    return 1;
   }
 
   /**
