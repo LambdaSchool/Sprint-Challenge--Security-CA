@@ -40,8 +40,18 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
+    let cur = lifeState[x];
+    let left = lifeState[x - 1];
+    let right = lifeState[x + 1];
+ 
+  
+    let life_death = (cur && left && right) || (!cur && !left && !right);
+    if(life_death){
+      return 0
+    } else {
+      return 1;
+    }
 
-    return 0; // instead of this
   }
 
   /**
