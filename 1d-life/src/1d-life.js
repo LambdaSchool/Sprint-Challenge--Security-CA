@@ -40,9 +40,33 @@
    */
   function getNewVal(lifeState, x) {
     // !!! IMPLEMENT ME
-
-    return 0; // instead of this
+  
+    
+  if (lifeState[x] < 1 || lifeState[x-1] >= x ){
+    return 0;
   }
+
+  if (lifeState[x] === lifeState.length - 1){
+    return 0;
+  }
+
+  else if ( 
+    lifeState[x-1] === 0 && lifeState[x] === 0 && lifestack[x+1] === -1
+  ){
+    return 0; 
+  }
+
+  else if (
+    lifeState[x-1] === 1 && lifeState[x] === 1 && lifeState[x+1] === 0){
+      return 0;
+    }
+  
+    }
+
+
+
+    return 1; // instead of this
+  
 
   /**
    * Draw life
