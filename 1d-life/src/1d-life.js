@@ -39,9 +39,70 @@
    * @param {*} x the current x coordinate in question
    */
   function getNewVal(lifeState, x) {
-    // !!! IMPLEMENT ME
+    const a = lifeState[x - 1];
+    const b = lifeState[x];
+    const c = lifeState[x + 1];
 
-    return 0; // instead of this
+    // F(a, b, c) = (a and !c) or (!b and c) or (!a and b)
+    // - Derived and simplified from truth table and Karnaugh map
+    // return (a && !c) || (!b && c) || (!a && b);  // original and it works
+    // return !((a && !c) || (!b && c) || (!a && b)); // interesting graphic
+
+   /* Now I'm going to try...
+   *   Surrounding    New   Return
+   *       ...         .      0
+   *       ..x         .      0
+   *       .x.         x      1
+   *       .xx         x      1
+   *       x..         x      1
+   *       x.x         x      1
+   *       xx.         .      0
+   *       xxx         .      0
+   */
+    // F(a, b, c) = (a and !b) or (!a and b):
+    // return (a && !b) || (!a && b); // creates right triangle -- kinda neat!
+   
+  /* and inverse of above (sort of)...
+   *   Surrounding    New   Return
+   *       ...         x      1
+   *       ..x         x      1
+   *       .x.         .      0
+   *       .xx         .      0
+   *       x..         .      0
+   *       x.x         .      0
+   *       xx.         x      1
+   *       xxx         x      1
+   */
+    // F(a, b, c) = (not a and not b) or (a and b)
+    // return (!a && !b) || (a && b);  // creates color inverse of above!
+    
+  /* And now this...
+   *   Surrounding    New   Return
+   *       ...         x      1
+   *       ..x         .      0
+   *       .x.         x      1
+   *       .xx         .      0
+   *       x..         x      1
+   *       x.x         .      0
+   *       xx.         x      0
+   *       xxx         .      1
+   */
+  // F(a, b, c) = not c:
+  // return !c; // displays a "gray" image (alternating black and white lines though very small)
+
+ /* And this...
+   *   Surrounding    New   Return
+   *       ...         x      1
+   *       ..x         x      1
+   *       .x.         x      1
+   *       .xx         .      0
+   *       x..         .      0
+   *       x.x         x      1
+   *       xx.         x      1
+   *       xxx         x      1
+   */
+  // F(a, b, c) = (not a and not c) or (not b and c) or (a and b)
+  return (!a && !c) || (!b && c) || (a && b); // a diagonal line sloping down and to the right
   }
 
   /**
